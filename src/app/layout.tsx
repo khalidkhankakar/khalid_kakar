@@ -1,6 +1,15 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/shared/navbar";
+import { ThemeProvider } from "@/components/shared/theme-provider";
+
+import localFont from 'next/font/local'
+ 
+const zentry = localFont({
+  src: './fonts/zentry-regular.woff2',
+  variable: '--font-zentry'
+})
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -23,11 +32,21 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${zentry.className} ${geistMono.variable} antialiased`}
       >
+        <ThemeProvider
+        attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange>
+
+        <Navbar />
+        <main  className="flex min-h-screen flex-col overflow-x-hidden ">
         {children}
+        </main>
+        </ThemeProvider>
       </body>
     </html>
   );
