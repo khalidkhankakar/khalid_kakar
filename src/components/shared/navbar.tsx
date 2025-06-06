@@ -6,7 +6,8 @@ import React, { useEffect, useRef, useState } from 'react'
 import { useWindowScroll } from 'react-use';
 import { ModeToggle } from './mode-toggle';
 import Image from 'next/image';
-import { User, User2 } from 'lucide-react';
+import { Menu, User, User2 } from 'lucide-react';
+import { Button } from '../ui/button';
 
 const navItems = ["About", "Projects", "Contact", "Skills"];
 
@@ -35,7 +36,7 @@ const Navbar = () => {
         }
 
         setLastScrollY(currentScrollY);
-    }, [currentScrollY, lastScrollY]);
+    }, [currentScrollY]);
 
     useEffect(() => {
         gsap.to(navContainerRef.current, {
@@ -75,6 +76,10 @@ const Navbar = () => {
                         </div>
 
                        <ModeToggle />
+                       <Button className='!border-none !bg-transparent !shadow-none cursor-pointer md:hidden ' >
+                         <Menu className='h-10  w-10' />
+                       </Button>
+                      
                         {/* <button
               onClick={toggleAudioIndicator}
               className="ml-10 flex items-center space-x-0.5"
