@@ -48,7 +48,7 @@ const HeroSection = () => {
         
             {/* <div className="pointer-events-none absolute inset-0 flex items-center justify-center   " /> */}
 
-        <h1 className="special-font uppercase font-zentry font-black text-5xl sm:right-10 sm:text-7xl md:text-9xl lg:text-[6rem] absolute bottom-5 right-5 z-40 text-blue-75">
+        <h1 className="--font-zentry uppercase font-zentry font-black text-5xl sm:right-10 sm:text-7xl md:text-7xl lg:text-[6rem] absolute bottom-5 right-5 z-40 text-blue-75">
           C<b>O</b>DING
         </h1>
 
@@ -63,7 +63,7 @@ const HeroSection = () => {
         </div>
       </div>
 
-      <h1 className="uppercase font-zentry font-black text-5xl sm:right-10 sm:text-7xl md:text-9xl lg:text-[6rem] absolute bottom-5 right-5 text-red-700">
+      <h1 className="uppercase font-zentry font-black text-5xl sm:right-10 sm:text-7xl md:text-7xl lg:text-[6rem] absolute bottom-5 right-5 text-red-700">
        C<b>O</b>DING
       </h1>
     </div>
