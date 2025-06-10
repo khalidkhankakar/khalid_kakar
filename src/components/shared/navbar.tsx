@@ -50,15 +50,15 @@ const Navbar = () => {
     return (
         <div
             ref={navContainerRef}
-            className="fixed inset-x-2 top-2 bg-primary text-white dark:text-black z-50 h-14 border-none transition-all duration-700  rounded-xl sm:inset-x-6"
+            className="fixed inset-x-2 top-2 bg-primary text-white dark:text-black z-50 h-14 border-none transition-all duration-700  rounded-xl sm:inset-x-6 "
         >
             <header className="absolute top-1/2 w-full -translate-y-1/2">
                 <nav className="flex size-full items-center justify-between p-4">
                     {/* Logo and Product button */}
                     <div className="flex items-center gap-3">
 
-                        <User2 className="h-8 w-8 bg-gray-200 p-2 rounded-full" />
-                        <p className="text-xl font-semibold">Khalid</p>
+                        <Image src={'/profile.jfif'} width={35} height={35} className='object-contain rounded-full' alt='profile' />
+                        <p className="text-xl font-semibold tracking-wide">Khalid Kakar</p>
                     </div>
 
                     {/* Navigation Links and Audio Button */}
@@ -68,7 +68,7 @@ const Navbar = () => {
                                 <Link
                                     key={index}
                                     href={`#${item.toLowerCase()}`}
-                                    className="nav-hover-btn"
+                                    className="nav-hover-btn tracking-wide"
                                 >
                                     {item}
                                 </Link>
