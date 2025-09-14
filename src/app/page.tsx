@@ -1,11 +1,10 @@
-import AboutMe from "@/components/shared/about-me";
-import HeroSection from "@/components/shared/hero-section";
+import HomePage from '@/components/shared/home-page'
+import React from 'react'
 
-export default function Home() {
+const page = () => {
   return (
-    <div >
-      <HeroSection />
-      <AboutMe />
-    </div>
+    <HomePage />
   )
 }
+
+export default page
