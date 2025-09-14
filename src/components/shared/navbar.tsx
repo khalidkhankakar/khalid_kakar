@@ -8,6 +8,7 @@ import Image from 'next/image';
 import { Menu, User, User2 } from 'lucide-react';
 import { Button } from '../ui/button';
 import { useStyleContext } from '@/lib/StyleContext';
+import BackgroundDropdown from './background-dropdown';
 
 const navItems = ["About", "Projects", "Contact", "Skills"];
 
@@ -17,7 +18,7 @@ const Navbar = () => {
 
     return (
         <div
-         className="sticky w-full top-0  text-black  z-50  border-b-[1px] transition-all duration-700 "
+            className="sticky w-full top-0   text-black dark:text-white  z-50  border-b-[1px] transition-all duration-700  bg-white-900 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-0 "
         >
             <header className=" w-full ">
                 <nav className="flex size-full items-center justify-between p-4">
@@ -42,12 +43,18 @@ const Navbar = () => {
                             ))}
                         </div>
 
-                       <Button onClick={()=> setStyle({ divClassName: "min-h-screen w-full relative", divStyle:{
-      background: "radial-gradient(125% 125% at 50% 90%, #fff 40%, #6366f1 100%)",
-    } })} >
-                         <Menu className='h-10  w-10' />
-                       </Button>
-                    
+                        {/* <Button onClick={() => setStyle({
+                            divClassName: "min-h-screen w-full relative", divStyle: {
+                                background: "radial-gradient(125% 125% at 50% 100%, #000000 40%, #350136 100%)",
+                            }
+                        })} >
+                            <Menu className='h-10  w-10' />
+                        </Button> */}
+                        <div className='mx-3'>
+
+                        <BackgroundDropdown />
+                        </div>
+
                     </div>
                 </nav>
             </header>
