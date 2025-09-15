@@ -45,8 +45,8 @@ export default function RootLayout({
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange>
+          {children}
 
-       {children}
         </ThemeProvider>
       </StyleProvider>
       </body>

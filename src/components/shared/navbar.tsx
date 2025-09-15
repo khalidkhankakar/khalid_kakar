@@ -1,6 +1,4 @@
 'use client'
-import clsx from 'clsx'
-import gsap from 'gsap';
 import Link from 'next/link';
 import React, { useEffect, useRef, useState } from 'react'
 import { useWindowScroll } from 'react-use';
