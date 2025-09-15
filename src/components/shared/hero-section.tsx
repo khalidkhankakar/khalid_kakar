@@ -1,51 +1,92 @@
 import React from 'react'
 import { Button } from '../ui/button'
 import Image from 'next/image'
+import Hint from './hint'
 
 const HeroSection = () => {
   return (
- <div className="container font-poppins mx-auto px-4 py-20 relative z-10">
-        <div className="max-w-4xl mx-auto text-center space-y-4">
-          {/* Badge */}
-          <div  className="flex justify-center w-full">
-            <div className='shadow-md py-0.5 px-3 flex items-center justify-center bg-white-900 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-0 border border-slate-300 dark:border-gray-700 gap-2 rounded-2xl' >
-              <Image src={'/icons/star.png'} width={30} height={30}  className="object-contain " alt='star' />
-             <span> Weekly new feature releases </span>
+    <div className="container font-poppins mx-auto px-4 py-20 relative z-10">
+      <div className="max-w-4xl mx-auto text-center space-y-4">
+        {/* Badge */}
+        <div className="flex justify-center w-full">
+          <div className='shadow-md text-xs md:text-sm py-0 md:py-0.5 px-3 flex items-center justify-center bg-white-900 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-0 border border-slate-300 dark:border-gray-700 gap-2 rounded-2xl' >
+            <Image src={'/icons/ai.svg'} width={30} height={30} className="object-contain " alt='star' />
+            <span> Weekly new feature releases </span>
+          </div>
+        </div>
+
+        {/* Main Headline */}
+        <h1
+
+          className="text-2xl lg:text-[48px] font-bold text-center"
+        >
+          UI Library for React
+        </h1>
+
+        {/* Description */}
+        <p
+
+          className="text-center text-sm md:text-lg  mx-auto max-w-2xl"
+        >
+          Open-source collection of UI components and animated effects built with{" "}
+          <strong>React</strong>,{" "}
+          <strong>TypeScript</strong>,{" "}
+          <strong>Tailwind CSS</strong>, and{" "}
+          <strong>Motion</strong>.
+          Pairs beautifully with{" "}
+          <strong>shadcn/ui</strong>.
+        </p>
+
+        {/* CTA Button */}
+        <div className="flex justify-center pt-4">
+          <Button
+            size="lg"
+            className=""
+          >
+            Get Started
+          </Button>
+        </div>
+
+
+        <div className='flex items-center mx-auto justify-center flex-wrap mt-5 gap-5 max-w-2xl'>
+          <Hint side='top' text='Javascript'>
+            <div>
+              <Image src={'/icons/javascript.svg'} width={35} height={35} className="object-contain " alt='star' />
             </div>
-          </div>
+          </Hint>
 
-          {/* Main Headline */}
-          <h1 
-         
-            className="text-2xl lg:text-[48px] font-bold text-center"
-          >
-            UI Library for React
-          </h1>
+          <Hint side='top' text='MySQL'>
+            <div>
+              <Image src={'/icons/mysql.svg'} width={35} height={35} className="object-contain " alt='star' />
+            </div>
+          </Hint>
 
-          {/* Description */}
-          <p 
-           
-            className="text-center text-sm md:text-lg border mx-auto max-w-2xl"
-          >
-            Open-source collection of UI components and animated effects built with{" "}
-            <strong>React</strong>,{" "}
-            <strong>TypeScript</strong>,{" "}
-            <strong>Tailwind CSS</strong>, and{" "}
-            <strong>Motion</strong>. 
-            Pairs beautifully with{" "}
-            <strong>shadcn/ui</strong>.
-          </p>
+          <Hint side='top' text='NextJS'>
+            <div>
+              <Image src={'/icons/nextjs.svg'} width={35} height={35} className="object-contain " alt='star' />
+            </div>
+          </Hint>         <Hint side='top' text='ReactJS'>
+            <div>
+              <Image src={'/icons/reactjs.svg'} width={35} height={35} className="object-contain " alt='star' />
+            </div>
+          </Hint>
 
-          {/* CTA Button */}
-          <div className="flex justify-center pt-4">
-            <Button 
-              size="lg"
-              className=""
-            >
-              Get Started
-            </Button>
-          </div>
-    </div>
+          <Hint side='top' text='Tailwind CSS'>
+            <div>
+              <Image src={'/icons/tailwind.svg'} width={35} height={35} className="object-contain " alt='star' />
+            </div>
+          </Hint>
+
+          <Hint side='top' text='Typescript'>
+            <div>
+              <Image src={'/icons/typescript.svg'} width={35} height={35} className="object-contain " alt='star' />
+            </div>
+          </Hint>
+
+        </div>
+      </div>
+
+
     </div>
   )
 }

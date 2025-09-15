@@ -36,7 +36,7 @@ export const StyleProvider = ({ children }: { children: React.ReactNode }) =>
   };
 
   return  (
-        <StyleContext.Provider value={{ divClassName, divStyle, setStyle }}>
+  <StyleContext.Provider value={{ divClassName, divStyle, setStyle }}>
     {children}
   </StyleContext.Provider>
 );

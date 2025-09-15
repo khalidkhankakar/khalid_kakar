@@ -15,7 +15,7 @@ export default function HomePage() {
   />
      <Navbar />
 
-    <div className="border flex items-center justify-center w-full h-[calc(100vh-150px)]" >
+    <div className=" flex items-center justify-center w-full h-[calc(100vh-150px)]" >
     <HeroSection />
     </div>
      
