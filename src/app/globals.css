@@ -40,6 +40,7 @@
   --font-sans: Geist, sans-serif;
   --font-serif: Georgia, serif;
   --font-poppins: 'Poppins', sans-serif;
+  --font-montserrat: 'Montserrat';
   --radius: 0.5rem;
   --shadow-2xs: 0px 1px 2px 0px hsl(0 0% 0% / 0.09);
   --shadow-xs: 0px 1px 2px 0px hsl(0 0% 0% / 0.09);
@@ -134,6 +135,7 @@
 
   --font-poppins: var(--font-poppins);
   --font-zentry: var(--font-zentry);
+  --font-montserrat: var(--font-montserrat);
 
 
   --radius-sm: calc(var(--radius) - 4px);

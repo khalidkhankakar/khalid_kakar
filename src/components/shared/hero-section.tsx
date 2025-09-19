@@ -20,7 +20,7 @@ const HeroSection = () => {
 
           className="text-2xl lg:text-[48px] font-bold text-center"
         >
-          UI Library for React
+          I'm Khalid Khan Kakar
         </h1>
 
         {/* Description */}
@@ -85,8 +85,6 @@ const HeroSection = () => {
 
         </div>
       </div>
-
-
     </div>
   )
 }

@@ -1,6 +1,6 @@
 
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
+import { Poppins, Montserrat } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/shared/navbar";
 import { ThemeProvider } from "@/components/shared/theme-provider";
@@ -16,6 +16,12 @@ const zentry = localFont({
 const poppins = Poppins({
   subsets: ['latin'],
   variable: '--font-poppins',
+  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
+})
+
+const saira = Montserrat({
+  subsets: ['latin'],
+  variable: '--font-montserrat',
   weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
 })
 
@@ -37,7 +43,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={` ${zentry.className} ${poppins.variable}  antialiased`}
+        className={` ${zentry.className} ${poppins.variable} ${saira.variable}  antialiased`}
       >
       <StyleProvider> 
         <ThemeProvider

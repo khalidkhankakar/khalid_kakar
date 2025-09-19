@@ -3,6 +3,7 @@
 import { useStyleContext } from "@/lib/StyleContext";
 import Navbar from "./navbar";
 import HeroSection from "./hero-section";
+import About from "./about";
 
 export default function HomePage() {
   const {divClassName, divStyle} = useStyleContext()
@@ -17,6 +18,9 @@ export default function HomePage() {
 
     <div className=" flex items-center justify-center w-full h-[calc(100vh-150px)]" >
     <HeroSection />
+    </div>
+    <div className="flex w-[90vw] max-w-6xl mx-auto  flex-col items-center justify-center">
+    <About />
     </div>
      
 </div>
