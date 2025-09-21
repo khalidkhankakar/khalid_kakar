@@ -1,10 +1,14 @@
+import { Github } from "lucide-react";
+import { Button } from "../ui/button";
+import Link from "next/link";
+
 interface ProjectCard {
   className?: string;
 }
 
 export const ProjectCard = ({ className = "" }: ProjectCard) => {
   return (
-    <div className={`overflow-hidden shadow-md bg-white dark:bg-black hover:shadow-lg transition-all duration-300 rounded-3xl  md:h-96 h-[30rem]  `}>
+    <div className={`overflow-hidden bg-white/50 dark:bg-black/50  bg-clip-padding  backdrop-blur-xs  shadow-lg transition-all duration-300 rounded-3xl  md:h-96 h-[30rem]   `}>
       {/* Mobile Layout (default) */}
       <div className="block h-full w-full md:hidden">
         {/* Image Section - Mobile */}
@@ -41,13 +45,13 @@ export const ProjectCard = ({ className = "" }: ProjectCard) => {
           
           {/* Tags */}
           <div className="flex flex-wrap gap-1">
-            <span className="px-2 py-1 text-xs rounded-md">
+            <span className="px-2  bg-white/70 dark:bg-black/70py-1 text-xs rounded-md">
               Design system
             </span>
-            <span className="px-2 py-1 text-xs rounded-md">
+            <span className="px-2 bg-white/70 dark:bg-black/70 py-1 text-xs rounded-md">
               Management software
             </span>
-            <span className="px-2 py-1 text-xs rounded-md">
+            <span className="px-2 bg-white/70 dark:bg-black/70 py-1 text-xs rounded-md">
               Portal design
             </span>
           </div>
@@ -55,7 +59,13 @@ export const ProjectCard = ({ className = "" }: ProjectCard) => {
       </div>
 
       {/* Desktop Layout */}
-      <div className="hidden md:flex w-full h-full ">
+      <div className="hidden  relative z-40 md:flex w-full h-full ">
+        <Button variant={'secondary'} className="rounded-full absolute top-3 right-3" asChild>
+          <Link href={'#'} >
+        <Github />
+          
+          </Link>
+        </Button>
         {/* Image Section - Desktop */}
         <div className="w-[70%] p-2 ">
             <div className="h-full w-full rounded-3xl overflow-hidden ">
@@ -92,13 +102,13 @@ export const ProjectCard = ({ className = "" }: ProjectCard) => {
           
           {/* Tags */}
           <div className="flex flex-wrap gap-2">
-            <span className="px-4 py-2 bg-tag-bg text-tag-text text-sm rounded-lg">
+            <span className="px-4 bg-white/70 dark:bg-black/70 py-2 bg-tag-bg text-tag-text text-sm rounded-lg">
               Design system
             </span>
-            <span className="px-4 py-2 bg-tag-bg text-tag-text text-sm rounded-lg">
+            <span className="px-4 bg-white/70 dark:bg-black/70 py-2 bg-tag-bg text-tag-text text-sm rounded-lg">
               Management software
             </span>
-            <span className="px-4 py-2 bg-tag-bg text-tag-text text-sm rounded-lg">
+            <span className="px-4 bg-white/70 dark:bg-black/70 py-2 bg-tag-bg text-tag-text text-sm rounded-lg">
               Portal design
             </span>
           </div>

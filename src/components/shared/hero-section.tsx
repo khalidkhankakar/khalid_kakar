@@ -18,9 +18,9 @@ const HeroSection = () => {
         {/* Main Headline */}
         <h1
 
-          className="text-2xl lg:text-[48px] font-bold text-center"
+          className="text-2xl lg:text-[48px] font-bold text-center  font-zentry uppercase"
         >
-          I'm Khalid Khan Kakar
+        Khalid Khan Kakar
         </h1>
 
         {/* Description */}
