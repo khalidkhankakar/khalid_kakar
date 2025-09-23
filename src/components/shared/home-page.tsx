@@ -6,6 +6,7 @@ import HeroSection from "./hero-section";
 import About from "./about";
 import BlogSection from "./blog-section";
 import { TechCards } from "./tech-cards";
+import ContactCard from "./contact-card";
 
 export default function HomePage() {
   const {divClassName, divStyle} = useStyleContext()
@@ -25,6 +26,7 @@ export default function HomePage() {
     <About />
     <BlogSection />
     <TechCards />
+    <ContactCard />
     </div>
      
 </div>
