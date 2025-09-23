@@ -21,10 +21,21 @@ const Navbar = () => {
             <header className=" w-full ">
                 <nav className="flex size-full items-center justify-between p-4">
                     {/* Logo and Product button */}
-                    <div className="flex items-center gap-3">
+                    <div className="flex  items-center gap-2">
 
-                        <Image src={'/profile.jfif'} width={35} height={35} className='object-contain rounded-full' alt='profile' />
-                        <p className="text-xl font-semibold tracking-wide">Khalid Kakar</p>
+                        <div className='border-2 p-0.5 border-green-600  rounded-full relative'>
+                            <div className="absolute top-0 right-0 flex h-3 w-3">
+
+                                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75" />
+                                <span className="relative inline-flex h-3 w-3 rounded-full bg-green-500" />
+                            </div>
+                            <Image src={'/profile.jfif'} width={45} height={45} className='object-contain rounded-full' alt='profile' />
+                        </div>
+                        <div>
+
+                            <p className="text-xl font-semibold tracking-wide">Khalid Kakar</p>
+                            <p className="text-gray-400 text-xs tracking-wider font-poppins">Open for work</p>
+                        </div>
                     </div>
 
                     {/* Navigation Links and Audio Button */}
@@ -50,13 +61,13 @@ const Navbar = () => {
                         </Button> */}
                         <div className='mx-3'>
 
-                        <BackgroundDropdown />
+                            <BackgroundDropdown />
                         </div>
 
                     </div>
                 </nav>
             </header>
-        </div>
+        </div >
     )
 }
 

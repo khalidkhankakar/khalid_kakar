@@ -17,7 +17,6 @@ const HeroSection = () => {
 
         {/* Main Headline */}
         <h1
-
           className="text-2xl lg:text-[48px] font-bold text-center  font-zentry uppercase"
         >
         Khalid Khan Kakar
