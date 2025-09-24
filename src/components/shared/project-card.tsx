@@ -1,14 +1,42 @@
+'use client';
 import { Github } from "lucide-react";
 import { Button } from "../ui/button";
 import Link from "next/link";
+import { useTransform, motion, useScroll } from 'framer-motion';
+import { useRef } from 'react';
 
 interface ProjectCard {
-  className?: string;
+ logo: string;
+    name: string;
+    image: string;
+    description: string;
+    techs: {
+        name: string;
+        image: string;
+    }[];
+    progress:any,
+range:any,
+targetScale:any,
+i: any
 }
 
-export const ProjectCard = ({ className = "" }: ProjectCard) => {
+export const ProjectCard = ({logo,i, image, name, description, techs,progress, range, targetScale }: ProjectCard) => {
+
+
+  const container = useRef(null);
+  const { scrollYProgress } = useScroll({
+    container: container,
+    offset: ['start end', 'start start']
+  })
+
+  const imageScale = useTransform(scrollYProgress, [0, 1], [2, 1])
+  const scale = useTransform(progress, range, [1, targetScale]);
+
   return (
-    <div className={`overflow-hidden bg-white/50 dark:bg-black/50  bg-clip-padding  backdrop-blur-xs  shadow-lg transition-all duration-300 rounded-3xl  md:h-96 h-[30rem]   `}>
+    <div className="h-screen flex items-center justify-center sticky top-0">
+    <motion.div
+    style={{scale, top:`calc(-5vh + ${i * 25}px)`}} 
+    className={`overflow-hidden bg-white/50 dark:bg-black/50  bg-clip-padding  backdrop-blur-xs  shadow-lg transition-all duration-300 rounded-3xl  md:h-96 h-[30rem]   `}>
       {/* Mobile Layout (default) */}
       <div className="block h-full w-full md:hidden">
         {/* Image Section - Mobile */}
@@ -16,7 +44,7 @@ export const ProjectCard = ({ className = "" }: ProjectCard) => {
                       <div className="h-full w-full rounded-3xl overflow-hidden ">
 
           <img
-            src={'https://docs.material-tailwind.com/img/team-3.jpg'}
+            src={image}
             alt="Dashboard interface preview"
             className="w-full rounded-2xl h-full  object-cover transition-transform duration-300 hover:scale-105"
           />
@@ -30,12 +58,12 @@ export const ProjectCard = ({ className = "" }: ProjectCard) => {
             <div className="w-8 h-8  rounded-sm flex items-center justify-center">
               <span className=" text-xs font-bold">QG</span>
             </div>
-            <span className="text-text-body font-medium">Queensland </span>
+            <span className="text-text-body font-medium">{name} </span>
           </div>
           
           {/* Title */}
           <h2 className="text-sm font-semibold ">
-            Building a unified design language across portals, products, and processes
+            {description}
           </h2>
           
           {/* Year */}
@@ -71,7 +99,7 @@ export const ProjectCard = ({ className = "" }: ProjectCard) => {
             <div className="h-full w-full rounded-3xl overflow-hidden ">
 
           <img
-            src={'https://docs.material-tailwind.com/img/team-3.jpg'}
+            src={image}
             alt="Dashboard interface preview"
             className="w-full h-full rounded-3xl object-cover transition-transform duration-300 hover:scale-105"
             />
@@ -79,19 +107,19 @@ export const ProjectCard = ({ className = "" }: ProjectCard) => {
         </div>
         
         {/* Content Section - Desktop */}
-        <div className=" p-8 flex flex-col font-poppins justify-between">
+        <div className=" w-[50%] p-8 flex flex-col font-poppins justify-between">
           <div>
             {/* Logo */}
             <div className="flex items-center mb-6">
               <div className="w-10 h-10 bg-brand-primary rounded-sm flex items-center justify-center ">
                 <span className=" text-sm font-bold">QG</span>
               </div>
-              <span className="text-text-body font-medium">Queensland Government</span>
+              <span className="text-text-body font-medium">{name}</span>
             </div>
             
             {/* Title */}
-            <h2 className="text-text-heading text-2xl font-semibold leading-tight mb-3">
-              Building a unified design language across portals, products, and processes
+            <h2 className="text-sm  mb-3">
+              {description}
             </h2>
             
             {/* Year */}
@@ -114,6 +142,7 @@ export const ProjectCard = ({ className = "" }: ProjectCard) => {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
+     </div>
   );
 };

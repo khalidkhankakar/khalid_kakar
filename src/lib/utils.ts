@@ -66,3 +66,42 @@ export const DYNAMIC_BACKGROUNDS: {
   }
 ]
 
+
+export const PROJECT_CARDS = [
+  {
+    logo:'logo1',
+    name:'Lorem ipsum dolor, sit amet1 ',
+    image:'https://docs.material-tailwind.com/img/team-3.jpg',
+    description:' Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis deleniti corrupti veniam! Architecto veniam inventore perferendis minus repellendus ipsum amet nobis voluptate magni eaque itaque consequuntur illum, dolorem laborum officia.',
+    techs:[
+      {
+        name:'name',
+        image:'image'
+      }
+    ]
+  },
+  {
+    logo:'logo2',
+    name:'Lorem ipsum dolor, sit amet ',
+    image:'https://docs.material-tailwind.com/img/team-3.jpg',
+    description:' Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis deleniti corrupti veniam! Architecto veniam inventore perferendis minus repellendus ipsum amet nobis voluptate magni eaque itaque consequuntur illum, dolorem laborum officia.',
+    techs:[
+      {
+        name:'name',
+        image:'image'
+      }
+    ]
+  },
+  {
+    logo:'logo3',
+    name:'Lorem ipsum dolor, sit amet ',
+    image:'https://docs.material-tailwind.com/img/team-3.jpg',
+    description:' Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis deleniti corrupti veniam! Architecto veniam inventore perferendis minus repellendus ipsum amet nobis voluptate magni eaque itaque consequuntur illum, dolorem laborum officia.',
+    techs:[
+      {
+        name:'name',
+        image:'image'
+      }
+    ]
+  }
+]
