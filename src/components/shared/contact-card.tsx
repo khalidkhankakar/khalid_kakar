@@ -14,8 +14,8 @@ const ContactCard = () => {
   const navLinks = ["HOME", "ABOUT", "WORK", "CONTACT"];
 
   return (
-    <div className="  z-30 p-4 flex items-center mb-10 justify-center">
-      <div className="w-full max-w-7xl rounded-3xl font-poppins backdrop-blur-xs">
+    <div className="  z-30  flex items-center mb-5 justify-center">
+      <div className="w-full max-w-7xl p-3 rounded-3xl font-poppins backdrop-blur-xs">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap- items-center">
           {/* Left Content Section */}
           <div className="lg:col-span-8 space-y-3">
@@ -38,7 +38,7 @@ const ContactCard = () => {
             </div>
 
             {/* CTA Button */}
-            <div className="flex gap-2">
+            <div className="flex md:flex-row flex-col gap-2">
               <Button variant="default" size="lg" className="rounded-xl text-lg px-4 py-2 ">
                 <Star className="w-5 h-5 fill-current" />
                 Mail me

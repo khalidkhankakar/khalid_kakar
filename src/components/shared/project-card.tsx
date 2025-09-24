@@ -14,29 +14,17 @@ interface ProjectCard {
         name: string;
         image: string;
     }[];
-    progress:any,
-range:any,
-targetScale:any,
 i: any
 }
 
-export const ProjectCard = ({logo,i, image, name, description, techs,progress, range, targetScale }: ProjectCard) => {
+export const ProjectCard = ({logo,i, image, name, description, techs,}: ProjectCard) => {
 
-
-  const container = useRef(null);
-  const { scrollYProgress } = useScroll({
-    container: container,
-    offset: ['start end', 'start start']
-  })
-
-  const imageScale = useTransform(scrollYProgress, [0, 1], [2, 1])
-  const scale = useTransform(progress, range, [1, targetScale]);
 
   return (
     <div className="h-screen flex items-center justify-center sticky top-0">
     <motion.div
-    style={{scale, top:`calc(-5vh + ${i * 25}px)`}} 
-    className={`overflow-hidden bg-white/50 dark:bg-black/50  bg-clip-padding  backdrop-blur-xs  shadow-lg transition-all duration-300 rounded-3xl  md:h-96 h-[30rem]   `}>
+    style={{ top:`calc(-5vh + ${i * 25}px)`}} 
+    className={`relative -top-1/4 overflow-hidden bg-white/90 dark:bg-black/90  bg-clip-padding  backdrop-blur-xs  shadow-lg transition-all duration-300 rounded-3xl  md:h-96 h-[30rem]   `}>
       {/* Mobile Layout (default) */}
       <div className="block h-full w-full md:hidden">
         {/* Image Section - Mobile */}
