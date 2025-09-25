@@ -2,16 +2,24 @@
 
 import React, { useEffect, useState } from "react";
 import { InfiniteMovingCards } from "../ui/infinite-moving-cards";
+import BallCanvas from "./canvas/ball-canvas";
 
 export function TechCards() {
   return (
     <div className="rounded-md flex flex-col w-full mb-28 items-center justify-center relative overflow-hidden">
-      <InfiniteMovingCards
+      {/* <InfiniteMovingCards
         items={techCards}
         direction="right"
         speed="fast"
         pauseOnHover={false}
-      />
+      /> */}
+       <div className='flex flex-row flex-wrap justify-center gap-10'>
+      {techCards.map((technology) => (
+        <div className='w-28 h-28' key={technology.name}>
+          <BallCanvas icon={technology.src} />
+        </div>
+      ))}
+    </div>
     </div>
   );
 }
@@ -19,34 +27,42 @@ export function TechCards() {
 const techCards = [
   {
     name:'Javascript',
-    src:'/tech-icons/javascript.svg'
+    src:'/tech-icons/javascript.png'
   },
   {
     name:'TypeScript',
-    src:'/tech-icons/typescript.svg'
+    src:'/tech-icons/typescript.png'
   },
   {
     name:'ReactJs',
-    src:'/tech-icons/reactjs.svg'
+    src:'/tech-icons/reactjs.png'
   },
   {
-    name:'NextJs',
-    src:'/tech-icons/nextjs.svg'
+    name:'NodeJS',
+    src:'/tech-icons/nodejs.png'
   },
   {
     name:'CSS',
-    src:'/tech-icons/css.svg'
+    src:'/tech-icons/css.png'
   },
   {
-    name:'Eslint',
-    src:'/tech-icons/eslint.svg'
+    name:'Docker',
+    src:'/tech-icons/docker.png'
   },
   {
-    name:'GSAP',
-    src:'/tech-icons/gsap.svg'
+    name:'Figma',
+    src:'/tech-icons/figma.png'
   },
   {
-    name:'MySQL',
-    src:'/tech-icons/mysql.svg'
+    name:'MongoDB',
+    src:'/tech-icons/mongodb.png'
+  },
+  {
+    name:'Redux',
+    src:'/tech-icons/redux.png'
+  },
+  {
+    name:'Tailwind CSs',
+    src:'/tech-icons/tailwind.png'
   }
 ]

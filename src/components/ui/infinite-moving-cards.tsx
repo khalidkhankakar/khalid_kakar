@@ -3,6 +3,7 @@
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
+import BallCanvas from "../shared/canvas/ball-canvas";
 
 export const InfiniteMovingCards = ({
   items,
@@ -85,9 +86,7 @@ export const InfiniteMovingCards = ({
           pauseOnHover && "hover:[animation-play-state:paused]",
         )}
       >
-        {items.map((item) => (
-          <Image key={item.src} src={item.src} width={80} height={60} alt={item.name} className="grayscale-100 hover:grayscale-0 transition-all cursor-pointer object-contain w-16 h-16"   />
-        ))}
+       
       </div>
     </div>
   );
