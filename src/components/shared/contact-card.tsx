@@ -98,7 +98,7 @@ const ContactCard = () => {
                   alt="profile" 
                   width={150}
                   height={150}
-                  className="w-full h-full object-contain rounded-xl"
+                  className="w-full grayscale-100 hover:grayscale-0 transition-all h-full object-contain rounded-xl"
                 />
               
             </div>

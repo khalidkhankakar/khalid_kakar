@@ -1,10 +1,7 @@
-'use client';
 import { Github } from "lucide-react";
 import { Button } from "../ui/button";
 import Link from "next/link";
-import { useTransform, motion, useScroll } from 'framer-motion';
-import { useRef } from 'react';
-
+import {motion} from 'framer-motion'
 interface ProjectCard {
  logo: string;
     name: string;
@@ -14,16 +11,22 @@ interface ProjectCard {
         name: string;
         image: string;
     }[];
-i: any
 }
 
-export const ProjectCard = ({logo,i, image, name, description, techs,}: ProjectCard) => {
+export const ProjectCard = ({logo, image, name, description, techs,}: ProjectCard) => {
 
 
   return (
-    <div className="h-screen flex items-center justify-center sticky top-0">
     <motion.div
-    style={{ top:`calc(-5vh + ${i * 25}px)`}} 
+      initial={{ opacity: 0, y: 50 }} // Start faded and below its final position
+      whileInView={{ opacity: 1, y: 0 }} // Animate to full opacity and original position when in view
+      viewport={{ once: true }} // Only animate once when the element enters the viewport
+      transition={{
+        duration: 0.5, // Animation duration
+        type: "tween", // Animation type
+        stiffness: 50, // Stiffness for the spring effect
+        delay: 0.1 // Optional delay before the animation starts
+      }}
     className={`relative -top-1/4 overflow-hidden bg-white/90 dark:bg-black/90  bg-clip-padding  backdrop-blur-xs  shadow-lg transition-all duration-300 rounded-3xl  md:h-96 h-[30rem]   `}>
       {/* Mobile Layout (default) */}
       <div className="block h-full w-full md:hidden">
@@ -131,6 +134,5 @@ export const ProjectCard = ({logo,i, image, name, description, techs,}: ProjectC
         </div>
       </div>
     </motion.div>
-     </div>
   );
 };
