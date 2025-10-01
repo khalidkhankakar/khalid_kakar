@@ -247,3 +247,81 @@
   filter: opacity(8%) contrast(105%);
   -webkit-filter: opacity(8%) contrast(105%);
 }
+
+
+
+
+.container-parallax {
+  height: 100vh;
+  position: relative;
+
+}
+
+.container-parallax .sticky-parallax {
+  position: sticky;
+  overflow: hidden;
+  top: 0;
+  height: 100vh;
+}
+
+.container-parallax .sticky-parallax .el-parallax {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container-parallax .sticky-parallax .el-parallax .imageContainer-parallax {
+  position: relative;
+  width: 25vw;
+  height: 25vh;
+}
+
+.container-parallax .sticky-parallax .el-parallax .imageContainer-parallax img {
+  object-fit: cover;
+}
+
+/* nth-of-type variations */
+.container-parallax .sticky-parallax .el-parallax:nth-of-type(2) .imageContainer-parallax {
+  top: -30vh;
+  left: 5vw;
+  width: 35vw;
+  height: 30vh;
+}
+
+.container-parallax .sticky-parallax .el-parallax:nth-of-type(3) .imageContainer-parallax {
+  top: -10vh;
+  left: -25vw;
+  width: 20vw;
+  height: 45vh;
+}
+
+.container-parallax .sticky-parallax .el-parallax:nth-of-type(4) .imageContainer-parallax {
+  left: 27.5vw;
+  width: 25vw;
+  height: 25vh;
+}
+
+.container-parallax .sticky-parallax .el-parallax:nth-of-type(5) .imageContainer-parallax {
+  top: 27.5vh;
+  left: 5vw;
+  width: 20vw;
+  height: 25vh;
+}
+
+.container-parallax .sticky-parallax .el-parallax:nth-of-type(6) .imageContainer-parallax {
+  top: 27.5vh;
+  left: -22.5vw;
+  width: 30vw;
+  height: 25vh;
+}
+
+.container-parallax .sticky-parallax .el-parallax:nth-of-type(7) .imageContainer-parallax {
+  top: 22.5vh;
+  left: 25vw;
+  width: 15vw;
+  height: 15vh;
+}

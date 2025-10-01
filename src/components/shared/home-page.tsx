@@ -7,6 +7,7 @@ import About from "./about";
 import BlogSection from "./blog-section";
 import { TechCards } from "./tech-cards";
 import ContactCard from "./contact-card";
+import MyGallery from "./my-gallery";
 
 export default function HomePage() {
   const {divClassName, divStyle} = useStyleContext()
@@ -25,6 +26,7 @@ export default function HomePage() {
     <div className="flex w-[90vw] max-w-6xl mx-auto  flex-col items-center justify-center ">
     <About />
     <BlogSection />
+    <MyGallery />
     <TechCards />
     <ContactCard />
     </div>
