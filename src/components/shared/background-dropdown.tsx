@@ -8,6 +8,7 @@ import {
 } from "@/components/ui/dropdown-menu"
 import { useStyleContext } from "@/lib/StyleContext";
 import { DYNAMIC_BACKGROUNDS } from "@/lib/utils";
+import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 
 
@@ -27,18 +28,12 @@ const BackgroundDropdown = () => {
     return (
         <DropdownMenu>
             <DropdownMenuTrigger asChild>
-
-                <div className="w-10 h-10 border-black dark:border-white border-2 rounded-md relative">
-                    <div
-                        className="absolute inset-0 z-0"
-                        style={divStyle}
-                    />
-
+                <div className="p-2  hover:bg-slate-200 cursor-pointer transition-all dark:hover:bg-gray-700 rounded-full">
+                <Sun className="w-6 h-6 "/>
                 </div>
-
             </DropdownMenuTrigger>
-            <DropdownMenuContent>
-                <DropdownMenuLabel className="font-poppins">Dynamic Backgrounds</DropdownMenuLabel>
+            <DropdownMenuContent >
+            
                 {
                     DYNAMIC_BACKGROUNDS.map((bg) => (
                         <DropdownMenuItem key={bg.name} onClick={() => handleChangeBackground(bg.divClassName, bg.divStyle, bg.theme)} asChild>

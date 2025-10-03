@@ -8,7 +8,7 @@ import { Button } from '../ui/button';
 import { useStyleContext } from '@/lib/StyleContext';
 import BackgroundDropdown from './background-dropdown';
 
-const navItems = ["About", "Projects", "Contact", "Skills"];
+const navItems = ["Goodies", "Ariticals", "Contact"];
 
 const Navbar = () => {
     const { setStyle } = useStyleContext();
@@ -19,7 +19,7 @@ const Navbar = () => {
             className="sticky w-full top-0   text-black dark:text-white  z-50  border-b-[1px] transition-all duration-700  bg-white-900 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-0 "
         >
             <header className=" w-full ">
-                <nav className="flex size-full items-center justify-between p-4">
+                <nav className="flex size-full items-center justify-between px-4 py-3">
                     {/* Logo and Product button */}
                     <div className="flex  items-center gap-2">
 
@@ -45,7 +45,7 @@ const Navbar = () => {
                                 <Link
                                     key={index}
                                     href={`#${item.toLowerCase()}`}
-                                    className="nav-hover-btn tracking-wide"
+                                    className="text-lg font-poppins tracking-wide"
                                 >
                                     {item}
                                 </Link>
@@ -60,7 +60,6 @@ const Navbar = () => {
                             <Menu className='h-10  w-10' />
                         </Button> */}
                         <div className='mx-3'>
-
                             <BackgroundDropdown />
                         </div>
 
