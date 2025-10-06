@@ -1,13 +1,9 @@
 'use client'
 import Link from 'next/link';
 import React, { useEffect, useRef, useState } from 'react'
-import { useWindowScroll } from 'react-use';
 import Image from 'next/image';
-import { Menu, User, User2 } from 'lucide-react';
-import { Button } from '../ui/button';
 import { useStyleContext } from '@/lib/StyleContext';
 import BackgroundDropdown from './background-dropdown';
-
 const navItems = ["Goodies", "Ariticals", "Contact"];
 
 const Navbar = () => {

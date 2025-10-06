@@ -1,7 +1,6 @@
 import React from 'react'
 import { Button } from '../ui/button'
 import Image from 'next/image'
-import Hint from './hint'
 
 const HeroSection = () => {
   return (
@@ -17,7 +16,7 @@ const HeroSection = () => {
 
         {/* Main Headline */}
         <h1
-          className="text-2xl lg:text-[48px] font-bold text-center  font-zentry uppercase"
+          className="text-2xl lg:text-[48px] font-bold text-center  font-zentry uppercase "
         >
         Khalid Khan Kakar
         </h1>

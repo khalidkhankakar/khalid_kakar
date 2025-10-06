@@ -10,28 +10,29 @@ import ContactCard from "./contact-card";
 import MyGallery from "./my-gallery";
 
 export default function HomePage() {
-  const {divClassName, divStyle} = useStyleContext()
+  const { divClassName, divStyle } = useStyleContext()
+
 
   return (
-<div className={divClassName}>
-  <div
-    className="absolute inset-0 z-0"
-    style={divStyle}
-  />
-     <Navbar />
+    <div className={divClassName}>
+      <div
+        className="absolute inset-0 z-0"
+        style={divStyle}
+      />
+      <Navbar />
 
-    <div className=" flex items-center justify-center w-full h-[calc(100vh-150px)]" >
-    <HeroSection />
+      <div className=" flex items-center justify-center w-full h-[calc(100vh-150px)]" >
+        <HeroSection />
+      </div>
+      <div className="flex w-[90vw] max-w-6xl mx-auto  flex-col items-center justify-center ">
+        <About />
+        <BlogSection />
+        <MyGallery />
+        <TechCards />
+        <ContactCard />
+      </div>
+
     </div>
-    <div className="flex w-[90vw] max-w-6xl mx-auto  flex-col items-center justify-center ">
-    <About />
-    <BlogSection />
-    <MyGallery />
-    <TechCards />
-    <ContactCard />
-    </div>
-     
-</div>
   )
 }
 

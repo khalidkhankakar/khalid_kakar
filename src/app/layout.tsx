@@ -41,17 +41,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" className="light" suppressHydrationWarning>
       <body
         className={` ${zentry.className} ${poppins.variable} ${saira.variable}  antialiased`}
       >
       <StyleProvider> 
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
-          enableSystem
+          defaultTheme="light"
           disableTransitionOnChange>
-
           {children}
 
         </ThemeProvider>
