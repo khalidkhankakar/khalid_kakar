@@ -10,6 +10,7 @@ import {
   IconTableColumn,
 } from "@tabler/icons-react";
 import { motion } from "motion/react";
+import Image from "next/image";
 
 
 export function ArticalsGrid() {
@@ -21,7 +22,7 @@ export function ArticalsGrid() {
           title={item.title}
           description={item.description}
           header={item.header}
-          className={cn("[&>p:text-lg]", item.className)}
+          className={cn("[&>p:text-lg] shadow-md", item.className)}
           icon={item.icon}
         />
       ))}
@@ -87,23 +88,27 @@ const SkeletonOne = () => {
 };
 const SkeletonTwo = () => {
   const variants = {
-    initial: {
-      width: 0,
-    },
+    initial: { width: 0 },
     animate: {
       width: "100%",
-      transition: {
-        duration: 0.2,
-      },
+      transition: { duration: 0.2 },
     },
     hover: {
       width: ["0%", "100%"],
-      transition: {
-        duration: 2,
-      },
+      transition: { duration: 2 },
     },
   };
-  const arr = new Array(6).fill(0);
+
+  // store random widths in state so they’re stable after hydration
+  const [widths, setWidths] = React.useState<number[]>([]);
+
+  React.useEffect(() => {
+    const randomWidths = new Array(6)
+      .fill(0)
+      .map(() => Math.random() * (100 - 40) + 40);
+    setWidths(randomWidths);
+  }, []);
+
   return (
     <motion.div
       initial="initial"
@@ -111,15 +116,13 @@ const SkeletonTwo = () => {
       whileHover="hover"
       className="flex flex-1 w-full h-full min-h-[6rem] dark:bg-dot-white/[0.2] bg-dot-black/[0.2] flex-col space-y-2"
     >
-      {arr.map((_, i) => (
+      {widths.map((w, i) => (
         <motion.div
-          key={"skelenton-two" + i}
+          key={`skeleton-two-${i}`}
           variants={variants}
-          style={{
-            maxWidth: Math.random() * (100 - 40) + 40 + "%",
-          }}
-          className="flex flex-row rounded-full border border-neutral-100 dark:border-white/[0.2] p-2  items-center space-x-2 bg-neutral-100 dark:bg-black w-full h-4"
-        ></motion.div>
+          style={{ maxWidth: `${w}%` }}
+          className="flex flex-row rounded-full border border-neutral-100 dark:border-white/[0.2] p-2 items-center space-x-2 bg-neutral-100 dark:bg-black w-full h-4"
+        />
       ))}
     </motion.div>
   );
@@ -180,37 +183,33 @@ const SkeletonFour = () => {
       initial="initial"
       animate="animate"
       whileHover="hover"
-      className="flex flex-1 w-full h-full min-h-[6rem] dark:bg-dot-white/[0.2] bg-dot-black/[0.2] flex-row space-x-2"
+      className="flex flex-1 w-full h-full min-h-[6rem] dark:bg-dot-white/[0.2] bg-dot-black/[0.2] flex-row space-x-2 "
     >
       <motion.div
         variants={first}
         className="h-full w-1/3 rounded-2xl bg-white p-4 dark:bg-black dark:border-white/[0.1] border border-neutral-200 flex flex-col items-center justify-center"
       >
-        <img
-          src="https://pbs.twimg.com/profile_images/1417752099488636931/cs2R59eW_400x400.jpg"
+        <Image
+          src="/profile.jfif"
           alt="avatar"
-          height="100"
-          width="100"
+          height={100}
+          width={100}
           className="rounded-full h-10 w-10"
         />
-        <p className="sm:text-sm text-xs text-center font-semibold text-neutral-500 mt-4">
-          Just code in Vanilla Javascript
-        </p>
+       
         <p className="border border-red-500 bg-red-100 dark:bg-red-900/20 text-red-600 text-xs rounded-full px-2 py-0.5 mt-4">
           Delusional
         </p>
       </motion.div>
       <motion.div className="h-full relative z-20 w-1/3 rounded-2xl bg-white p-4 dark:bg-black dark:border-white/[0.1] border border-neutral-200 flex flex-col items-center justify-center">
-        <img
-          src="https://pbs.twimg.com/profile_images/1417752099488636931/cs2R59eW_400x400.jpg"
+         <Image
+          src="/profile.jfif"
           alt="avatar"
-          height="100"
-          width="100"
+          height={100}
+          width={100}
           className="rounded-full h-10 w-10"
         />
-        <p className="sm:text-sm text-xs text-center font-semibold text-neutral-500 mt-4">
-          Tailwind CSS is cool, you know
-        </p>
+       
         <p className="border border-green-500 bg-green-100 dark:bg-green-900/20 text-green-600 text-xs rounded-full px-2 py-0.5 mt-4">
           Sensible
         </p>
@@ -219,16 +218,14 @@ const SkeletonFour = () => {
         variants={second}
         className="h-full w-1/3 rounded-2xl bg-white p-4 dark:bg-black dark:border-white/[0.1] border border-neutral-200 flex flex-col items-center justify-center"
       >
-        <img
-          src="https://pbs.twimg.com/profile_images/1417752099488636931/cs2R59eW_400x400.jpg"
+       <Image
+          src="/profile.jfif"
           alt="avatar"
-          height="100"
-          width="100"
+          height={100}
+          width={100}
           className="rounded-full h-10 w-10"
         />
-        <p className="sm:text-sm text-xs text-center font-semibold text-neutral-500 mt-4">
-          I love angular, RSC, and Redux.
-        </p>
+       
         <p className="border border-orange-500 bg-orange-100 dark:bg-orange-900/20 text-orange-600 text-xs rounded-full px-2 py-0.5 mt-4">
           Helpless
         </p>
@@ -272,14 +269,14 @@ const SkeletonFive = () => {
         variants={variants}
         className="flex flex-row rounded-2xl border border-neutral-100 dark:border-white/[0.2] p-2  items-start space-x-2 bg-white dark:bg-black"
       >
-        <img
-          src="https://pbs.twimg.com/profile_images/1417752099488636931/cs2R59eW_400x400.jpg"
+        <Image
+          src="/profile.jfif"
           alt="avatar"
-          height="100"
-          width="100"
+          height={100}
+          width={100}
           className="rounded-full h-10 w-10"
         />
-        <p className="text-xs text-neutral-500">
+        <p className="text-xs text-neutral-500 font-poppins">
           There are a lot of cool framerworks out there like React, Angular,
           Vue, Svelte that can make your life ....
         </p>

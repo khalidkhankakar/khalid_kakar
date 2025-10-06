@@ -20,8 +20,8 @@ const MyGallery = () => {
 
 
   return (
-    <div className="mb-20 w-full">
-      <p className='text-xl md:text-4xl z-50 font-semibold tracking-wider  text-center'>My Gallery</p>
+    <div className="mb-20 w-full  z-40 ">
+      <p className='text-xl md:text-4xl font-semibold tracking-wider  text-center'>My Gallery</p>
       <ZoomParallax/>
       
     </div>
