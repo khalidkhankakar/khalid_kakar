@@ -1,18 +1,14 @@
 import React from 'react'
 import { Button } from '../ui/button'
 import Image from 'next/image'
+import { HeroBadge } from './hero-badge'
 
 const HeroSection = () => {
   return (
     <div className="container font-poppins mx-auto px-4 py-20 relative z-10">
       <div className="max-w-4xl mx-auto text-center space-y-4">
         {/* Badge */}
-        <div className="flex justify-center w-full">
-          <div className='shadow-md text-xs md:text-sm py-0 md:py-0.5 px-3 flex items-center justify-center bg-white-900 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-0 border border-slate-300 dark:border-gray-700 gap-2 rounded-2xl' >
-            <Image src={'/icons/ai.svg'} width={25} height={25} className="object-contain " alt='star' />
-            <span> Weekly new feature releases </span>
-          </div>
-        </div>
+        <HeroBadge text='Dynamic Excellence with NextJS' />
 
         {/* Main Headline */}
         <h1
