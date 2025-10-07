@@ -2,11 +2,11 @@
 import type { Metadata } from "next";
 import { Poppins, Montserrat } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/shared/navbar";
 import { ThemeProvider } from "@/components/shared/theme-provider";
 
 import localFont from 'next/font/local'
 import { StyleProvider } from "@/lib/StyleContext";
+import Navbar from "@/components/shared/navbar";
 
 const zentry = localFont({
   src: './fonts/zentry-regular.woff2',
@@ -41,19 +41,23 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="light" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning>
       <body
         className={` ${zentry.className} ${poppins.variable} ${saira.variable}  antialiased`}
-      >
-      <StyleProvider> 
+        >
         <ThemeProvider
           attribute="class"
           defaultTheme="light"
           disableTransitionOnChange>
+            <StyleProvider> 
+          <div className="relative">
+        <Navbar />
+        <main className="">
           {children}
-
-        </ThemeProvider>
+        </main>
+          </div>
       </StyleProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

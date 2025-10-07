@@ -12,7 +12,7 @@ const Navbar = () => {
 
     return (
         <div
-            className="sticky w-full top-0   text-black dark:text-white  z-50  border-b-[1px] transition-all duration-700  bg-white-900 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-0 "
+            className="fixed w-full top-0 text-black dark:text-white  z-50  border-b-[1px] transition-all duration-700  bg-white-900 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-0 "
         >
             <header className=" w-full ">
                 <nav className="flex size-full items-center justify-between px-4 py-3">

@@ -6,7 +6,7 @@ import { HeroBadge } from './hero-badge'
 const HeroSection = () => {
   return (
     <div className="container font-poppins mx-auto px-4 py-20 relative z-10">
-      <div className="max-w-4xl mx-auto text-center space-y-4">
+      <div className="max-w-4xl mx-auto text-center space-y-3">
         {/* Badge */}
         <HeroBadge text='Dynamic Excellence with NextJS' />
 
@@ -32,7 +32,7 @@ const HeroSection = () => {
         </p>
 
         {/* CTA Button */}
-        <div className="flex justify-center pt-4">
+        <div className="flex justify-center pt-2">
           <Button
             size="lg"
             className=""
