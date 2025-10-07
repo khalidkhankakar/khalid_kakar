@@ -1,10 +1,23 @@
 'use client'
 import Link from 'next/link';
-import React, { useEffect, useRef, useState } from 'react'
+import React from 'react'
 import Image from 'next/image';
 import { useStyleContext } from '@/lib/StyleContext';
 import BackgroundDropdown from './background-dropdown';
-const navItems = ["Goodies", "Ariticals", "Contact"];
+const navItems = [
+    {
+        name:'Goodies',
+        link:'/goodies'
+    },
+    {
+        name:'Articals',
+        link:'/#articals'
+    },
+    {
+        name:'Contact',
+        link:'/#contact'
+    }
+]
 
 const Navbar = () => {
     const { setStyle } = useStyleContext();
@@ -17,9 +30,9 @@ const Navbar = () => {
             <header className=" w-full ">
                 <nav className="flex size-full items-center justify-between px-4 py-3">
                     {/* Logo and Product button */}
-                    <div className="flex  items-center gap-2">
+                    <Link href={'/'} className="flex cursor-pointer items-center gap-2">
 
-                        <div className='border-2 p-0.5 border-green-600  rounded-full relative'>
+                        <div className='border-2  p-0.5 border-green-600  rounded-full relative'>
                             <div className="absolute top-0 right-0 flex h-3 w-3">
 
                                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75" />
@@ -27,12 +40,13 @@ const Navbar = () => {
                             </div>
                             <Image src={'/profile.jfif'} width={45} height={45} className='object-contain rounded-full' alt='profile' />
                         </div>
+                        
                         <div>
 
                             <p className="text-xl font-semibold tracking-wide">Khalid Kakar</p>
                             <p className="text-gray-400 text-xs tracking-wider font-poppins">Open for work</p>
                         </div>
-                    </div>
+                    </Link>
 
                     {/* Navigation Links and Audio Button */}
                     <div className="flex h-full items-center  ">
@@ -40,10 +54,10 @@ const Navbar = () => {
                             {navItems.map((item, index) => (
                                 <Link
                                     key={index}
-                                    href={`#${item.toLowerCase()}`}
+                                    href={`${item.link}`}
                                     className="text-lg font-poppins tracking-wide"
                                 >
-                                    {item}
+                                    {item.name}
                                 </Link>
                             ))}
                         </div>
