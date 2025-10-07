@@ -22,7 +22,7 @@ export function HeroBadge({text}:{text:string}) {
       />
       <Image src={'/icons/ai.svg'} width={25} height={25} className="object-contain " alt='star' />
        <hr className="mx-2 h-4 w-px shrink-0 bg-neutral-500" />
-      <AnimatedGradientText className="text-sm font-medium">
+      <AnimatedGradientText className="text-xs md:text-sm font-medium">
       {text}
       </AnimatedGradientText>
       <ChevronRight
