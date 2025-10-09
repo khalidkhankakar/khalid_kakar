@@ -149,7 +149,10 @@ export default function TailwindGradient() {
         className="absolute top-0 inset-0 z-0"
         style={divStyle}
       />
+
+ 
       <div className="container mx-auto px-4 pt-36 pb-12 font-poppins">
+ 
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -312,6 +315,8 @@ export default function TailwindGradient() {
           </motion.div>
         </div>
       </div>
+
+   
     </div>
   );
 }
