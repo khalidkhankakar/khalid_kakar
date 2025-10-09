@@ -7,6 +7,7 @@ import { ThemeProvider } from "@/components/shared/theme-provider";
 import localFont from 'next/font/local'
 import { StyleProvider } from "@/lib/StyleContext";
 import Navbar from "@/components/shared/navbar";
+import { Toaster } from "@/components/ui/sonner";
 
 const zentry = localFont({
   src: './fonts/zentry-regular.woff2',
@@ -56,6 +57,7 @@ export default function RootLayout({
           {children}
         </main>
           </div>
+          <Toaster />
       </StyleProvider>
         </ThemeProvider>
       </body>
