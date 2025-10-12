@@ -4,7 +4,8 @@ import React from 'react'
 import Image from 'next/image';
 import { useStyleContext } from '@/lib/StyleContext';
 import BackgroundDropdown from './background-dropdown';
-const navItems = [
+import MobileNav from './mobile-nav';
+export const navItems = [
     {
         name:'Goodies',
         link:'/goodies'
@@ -72,6 +73,8 @@ const Navbar = () => {
                         <div className='mx-3'>
                             <BackgroundDropdown />
                         </div>
+
+                        <MobileNav />
 
                     </div>
                 </nav>
