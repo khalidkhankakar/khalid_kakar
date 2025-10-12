@@ -52,7 +52,9 @@ export default function RootLayout({
           disableTransitionOnChange>
             <StyleProvider> 
           <div className="relative">
+  
         <Navbar />
+       
         <main className="">
           {children}
         </main>

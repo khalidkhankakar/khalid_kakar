@@ -1,8 +1,6 @@
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 import { Star, Mail, Phone, ExternalLink } from "lucide-react";
 import Image from "next/image";
-
 const ContactCard = () => {
   const socialLinks = [
     { icon: "in", label: "LinkedIn" },
@@ -99,8 +97,8 @@ const ContactCard = () => {
                   width={150}
                   height={150}
                   className="w-full grayscale-100 hover:grayscale-0 transition-all h-full object-contain rounded-xl"
-                />
-              
+                /> 
+  
             </div>
           </div>
         </div>
