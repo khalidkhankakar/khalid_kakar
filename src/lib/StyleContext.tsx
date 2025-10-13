@@ -7,7 +7,7 @@ interface StyleContextProps {
   setStyle: (style: Partial<Omit<StyleContextProps, 'setStyle'>>) => void;
 }
 
-const defaultClass = 'min-h-screen w-full bg-white';
+const defaultClass = 'min-h-screen w-full bg-white z-0 ';
 const defaultStyle: React.CSSProperties = {
   backgroundImage: `
     linear-gradient(to right, rgba(229,231,235,0.8) 1px, transparent 1px),

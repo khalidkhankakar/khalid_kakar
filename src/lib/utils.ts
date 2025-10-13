@@ -15,7 +15,7 @@ export const DYNAMIC_BACKGROUNDS: {
 }[] = [
   {
     name: "Soft Lavender",
-    divClassName:"min-h-screen w-full bg-white relative overflow-hidden",
+    divClassName:"min-h-screen w-full bg-white relative overflow-hidden z-0",
     divStyle:{
      backgroundImage: `
        radial-gradient(circle at center, #c4b5fd, transparent)
@@ -25,7 +25,7 @@ export const DYNAMIC_BACKGROUNDS: {
   },
   {
     name: "Diagonal Grid",
-    divClassName:"min-h-screen w-full bg-[#0f0f0f] relative text-white",
+    divClassName:"min-h-screen w-full bg-[#0f0f0f] relative text-white z-0",
     divStyle:{
         backgroundImage: `
    repeating-linear-gradient(45deg, rgba(255, 140, 0, 0.12) 0, rgba(255, 140, 0, 0.12) 1px, transparent 1px, transparent 22px),
@@ -37,7 +37,7 @@ export const DYNAMIC_BACKGROUNDS: {
   },
    {
     name: "Aurora Dream",
-    divClassName:"min-h-screen w-full relative",
+    divClassName:"min-h-screen w-full relative  z-0",
     divStyle:{
       background: `
        radial-gradient(ellipse 80% 60% at 60% 20%, rgba(175, 109, 255, 0.50), transparent 65%),
@@ -51,7 +51,7 @@ export const DYNAMIC_BACKGROUNDS: {
   },
   {
     name: "Dark Dotted",
-    divClassName:"min-h-screen w-full bg-[#0f172a] relative",
+    divClassName:"min-h-screen w-full bg-[#0f172a] relative  z-0",
     divStyle:{
       background: "#0f172a",
       backgroundImage: `
