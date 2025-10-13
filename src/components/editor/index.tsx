@@ -1,7 +1,6 @@
 'use client'
 
 import { useState } from 'react'
-import "./prosemirror.css";
 import {
   EditorCommand,
   EditorCommandEmpty,
@@ -67,7 +66,7 @@ export default function Editor({ initialValue, onChange }: EditorProps) {
   }
 
   return (
-    <div className='relative w-full '>
+    <div className='relative w-full font-poppins '>
       <EditorRoot>
         <EditorContent
           immediatelyRender={false}

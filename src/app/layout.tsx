@@ -2,6 +2,9 @@
 import type { Metadata } from "next";
 import { Poppins, Montserrat } from "next/font/google";
 import "./globals.css";
+import "@/components/editor/prosemirror.css";
+// import 'katex/dist/katex.min.css';
+
 import { ThemeProvider } from "@/components/shared/theme-provider";
 
 import localFont from 'next/font/local'
@@ -44,7 +47,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={` ${zentry.className} ${poppins.variable} ${saira.variable}  antialiased`}
+        className={` ${zentry.variable} ${poppins.variable} ${saira.variable}  antialiased`}
         >
         <ThemeProvider
           attribute="class"
