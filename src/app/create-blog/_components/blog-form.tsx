@@ -184,7 +184,7 @@ const BlogForm = ({
             </FormItem>
           )}
         />
-        {/* <Button type="submit" className="w-full  rounded-xl text-lg" >{isPending ? <Loader className="animate-spin" /> : "Create Blog"}</Button> */}
+        <Button type="submit" className="w-full" >{isPending ? <Loader className="animate-spin" /> : "Create Blog"}</Button>
       </form>
     </Form>
   )

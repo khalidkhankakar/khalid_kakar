@@ -11,7 +11,7 @@ const CreateBlog = () => {
     <div className={divClassName}>
     
       
-      <div className='w-[90vw] font-poppins  pt-20 max-w-6xl mx-auto '>
+      <div className='w-[90vw]  font-poppins  pt-20 pb-10 max-w-6xl mx-auto '>
         <h1 className='text-2xl mt-2 z-30'>Create Blog post</h1>
         <BlogForm  />
       </div>
