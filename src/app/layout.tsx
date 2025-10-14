@@ -2,7 +2,6 @@
 import type { Metadata } from "next";
 import { Poppins, Montserrat } from "next/font/google";
 import "./globals.css";
-import "@/components/editor/prosemirror.css";
 import 'katex/dist/katex.min.css';
 
 import { ThemeProvider } from "@/components/shared/theme-provider";
