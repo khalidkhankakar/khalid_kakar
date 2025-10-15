@@ -1,5 +1,9 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+
 @import "tw-animate-css";
+
 
 @custom-variant dark (&:is(.dark *));
 
@@ -683,3 +687,5 @@ mark {
     aspect-ratio: 1 / 1;
   }
 }
+
+
