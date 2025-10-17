@@ -10,6 +10,7 @@ import localFont from 'next/font/local'
 import { StyleProvider } from "@/lib/StyleContext";
 import Navbar from "@/components/shared/navbar";
 import { Toaster } from "@/components/ui/sonner";
+import { TRPCReactProvider } from "@/trpc/client";
 
 const zentry = localFont({
   src: './fonts/zentry-regular.woff2',
@@ -45,26 +46,30 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body
-        className={` ${zentry.variable} ${poppins.variable} ${saira.variable}  antialiased`}
+      <TRPCReactProvider>
+
+
+        <body
+          className={` ${zentry.variable} ${poppins.variable} ${saira.variable}  antialiased`}
         >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="light"
-          disableTransitionOnChange>
-            <StyleProvider> 
-          <div className="relative">
-  
-        <Navbar />
-       
-        <main className="">
-          {children}
-        </main>
-          </div>
-          <Toaster />
-      </StyleProvider>
-        </ThemeProvider>
-      </body>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="light"
+            disableTransitionOnChange>
+            <StyleProvider>
+              <div className="relative">
+
+                <Navbar />
+
+                <main className="">
+                  {children}
+                </main>
+              </div>
+              <Toaster />
+            </StyleProvider>
+          </ThemeProvider>
+        </body>
+      </TRPCReactProvider>
     </html>
   );
 }
