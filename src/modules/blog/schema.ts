@@ -1,4 +1,4 @@
-import z from "zod"
+import z from "zod";
 
 export const blogSchema = z.object({
     image :z.instanceof(File).optional(),
