@@ -88,11 +88,22 @@ export const blogRouter = createTRPCRouter({
             const { slug } = input;
             const blog = await ctx.db.query.blogs.findFirst({ where: (blog, { eq }) => eq(blog.slug, slug)})
 
-            if (!blog) {
-
+              if (!blog) {
                 throw new TRPCError({ code: "NOT_FOUND", message: "Blog not found" });
             }
-            return {code: 200, blog  };
+
+            // populate tags
+            const blogWithTags =  {
+                ...blog,
+                tags: await ctx.db.query.tagBlogs.findMany({
+                    where: (tagBlog, { eq }) => eq(tagBlog.blogId, blog.id),
+                    with: {
+                        tag: true,
+                    },
+                }).then(tagBlogs => tagBlogs.map(tb => tb.tag.name))
+            }
+            
+            return {code: 200, blog:blogWithTags  };
         } catch (error) {
             throw new TRPCError({ code: "INTERNAL_SERVER_ERROR", message: (error as Error).message });
         }
@@ -107,7 +118,7 @@ export const blogRouter = createTRPCRouter({
             throw new TRPCError({ code: "INTERNAL_SERVER_ERROR", message: (error as Error).message });
         }
     }),
-    
+
 
 })
 
