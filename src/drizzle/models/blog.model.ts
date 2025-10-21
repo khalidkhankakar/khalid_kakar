@@ -3,6 +3,7 @@ import { pgTable, varchar, integer, timestamp } from "drizzle-orm/pg-core";
 import { relations } from "drizzle-orm";
 import tagBlogs from "./tag-blog.model";
 
+
 // Blog Table
 const blogs = pgTable("blogs", {
   id: varchar("id").primaryKey().$defaultFn(() => crypto.randomUUID()),
