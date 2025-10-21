@@ -19,9 +19,12 @@ import { Loader, X } from "lucide-react"
 import { toast } from "sonner"
 import { useRouter } from "next/navigation"
 import { JSONContent } from "novel"
-import { blogSchema } from "@/lib/validation"
+import { blogSchema } from "@/modules/blog/schema"
 import ImageUploader from "./image-uploader"
 import Editor from "@/components/editor"
+import { trpc } from "@/trpc/server"
+import { useMutation } from "@tanstack/react-query"
+import { useTRPC } from "@/trpc/client"
 
 
 interface Props{
@@ -42,7 +45,15 @@ const BlogForm = ({
   blogImage, 
   blogDesc,
   isEdit = false}:Props) => {
-
+  const trpc = useTRPC()
+  const createBlog = useMutation(trpc.blog.createBlog.mutationOptions({
+    onSuccess:(message)=>{
+      console.log('Blog created successfully',{message})
+    },
+    onError:(message)=>{
+      console.log('Oops!', {message})
+    }
+  }))
   const [isPending, startTransition] = useTransition()
   const router = useRouter()
   const form = useForm<z.infer<typeof blogSchema>>({
@@ -97,7 +108,14 @@ const BlogForm = ({
 
   // 2. Define a submit handler.
   function onSubmit(values: z.infer<typeof blogSchema>) {
+    const formData = new FormData();
+    formData.append('image', values.image as File);
+    formData.append('title', values.title);
+    formData.append('tags', JSON.stringify(values.tags));
+    formData.append('content', values.content);
+    formData.append('description', values.description);
     console.log({values})
+    createBlog.mutate(values)
   }
 
   return (
