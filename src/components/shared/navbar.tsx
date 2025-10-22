@@ -5,18 +5,19 @@ import Image from 'next/image';
 import { useStyleContext } from '@/lib/StyleContext';
 import BackgroundDropdown from './background-dropdown';
 import MobileNav from './mobile-nav';
+import NamePlate from './name-plate';
 export const navItems = [
     {
-        name:'Goodies',
-        link:'/goodies'
+        name: 'Goodies',
+        link: '/goodies'
     },
     {
-        name:'Articals',
-        link:'/#articals'
+        name: 'Articals',
+        link: '/#articals'
     },
     {
-        name:'Contact',
-        link:'/#contact'
+        name: 'Contact',
+        link: '/#contact'
     }
 ]
 
@@ -31,22 +32,8 @@ const Navbar = () => {
             <header className=" w-full ">
                 <nav className="flex size-full items-center justify-between px-4 py-3">
                     {/* Logo and Product button */}
-                    <Link href={'/'} className="flex cursor-pointer items-center gap-2">
-
-                        <div className='border-2  p-0.5 border-green-600  rounded-full relative'>
-                            <div className="absolute top-0 right-0 flex h-3 w-3">
-
-                                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75" />
-                                <span className="relative inline-flex h-3 w-3 rounded-full bg-green-500" />
-                            </div>
-                            <Image src={'/profile.jfif'} width={45} height={45} className='object-contain rounded-full' alt='profile' />
-                        </div>
-                        
-                        <div>
-
-                            <p className="text-xl font-semibold tracking-wide">Khalid Kakar</p>
-                            <p className="text-gray-400 text-xs tracking-wider font-poppins">Open for work</p>
-                        </div>
+                    <Link href={'/'} className="cursor-pointer ">
+                       <NamePlate />
                     </Link>
 
                     {/* Navigation Links and Audio Button */}

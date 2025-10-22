@@ -10,7 +10,7 @@ const MyGallery = () => {
         useEffect( () => {
         const lenis = new Lenis()
        
-        function raf(time) {
+        function raf(time:any) {
             lenis.raf(time)
             requestAnimationFrame(raf)
         }
@@ -21,7 +21,7 @@ const MyGallery = () => {
 
   return (
     <div className="mb-20 w-full  z-40 ">
-      <p className='text-xl md:text-4xl font-semibold tracking-wider  text-center'>My Gallery</p>
+      <p className='text-xl md:text-4xl font-bold font-zentry tracking-widest  '>My Gallery</p>
       <ZoomParallax/>
       
     </div>

@@ -6,7 +6,7 @@ const About = () => {
 
     return (
         <div  className='z-40 w-full space-y-3 mx-auto mb-10' >
-            <p className='text-xl md:text-4xl font-semibold tracking-wider  text-center'>Some Projects</p>
+            <p className='text-xl md:text-4xl font-bold font-zentry tracking-widest  '>Amazing Projects</p>
 
                 {
                     PROJECT_CARDS.map((pro, i) => {

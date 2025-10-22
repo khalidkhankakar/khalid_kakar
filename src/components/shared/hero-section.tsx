@@ -12,15 +12,15 @@ const HeroSection = () => {
 
         {/* Main Headline */}
         <h1
-          className="text-2xl lg:text-[48px] font-bold text-center uppercase "
+          className="text-2xl mt-2 lg:text-[48px] font-bold text-center uppercase "
         >
-        KᕼᗩᒪIᗪ Kᕼᗩᑎ KᗩKᗩᖇ
+        KHALID KHAN KAKAR
         </h1>
 
         {/* Description */}
         <p
 
-          className="text-center text-sm md:text-lg  mx-auto max-w-2xl"
+          className="text-center text-lg md:text-2xl leading-6 md:leading-8  mx-auto  max-w-4xl"
         >
           Open-source collection of UI components and animated effects built with{" "}
           <strong>React</strong>,{" "}
@@ -31,15 +31,7 @@ const HeroSection = () => {
           <strong>shadcn/ui</strong>.
         </p>
 
-        {/* CTA Button */}
-        <div className="flex justify-center pt-2">
-          <Button
-            size="lg"
-            className=""
-          >
-            Get Started
-          </Button>
-        </div>
+
 
 
         <div className='flex  items-center mx-auto justify-center flex-wrap mt-5 gap-x-5 gap-y-3 max-w-2xl'>

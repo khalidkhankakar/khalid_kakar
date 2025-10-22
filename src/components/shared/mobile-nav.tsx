@@ -10,6 +10,7 @@ import {  Menu } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import { navItems } from "./navbar"
+import NamePlate from "./name-plate"
 
 
 const MobileNav = () => {
@@ -23,22 +24,8 @@ const MobileNav = () => {
   <SheetContent className="w-[90vw] sm:w-[540px]">
     <SheetHeader>
       <SheetTitle asChild> 
-                 <Link href={'/'} className="flex cursor-pointer items-center gap-2">
-
-                        <div className='border-2  p-0.5 border-green-600  rounded-full relative'>
-                            <div className="absolute top-0 right-0 flex h-3 w-3">
-
-                                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75" />
-                                <span className="relative inline-flex h-3 w-3 rounded-full bg-green-500" />
-                            </div>
-                            <Image src={'/profile.jfif'} width={45} height={45} className='object-contain rounded-full' alt='profile' />
-                        </div>
-                        
-                        <div>
-
-                            <p className="text-xl font-semibold tracking-wide">Khalid Kakar</p>
-                            <p className="text-gray-400 text-xs tracking-wider font-poppins">Open for work</p>
-                        </div>
+                    <Link href={'/'} className="cursor-pointer">
+                            <NamePlate />
                     </Link>
       </SheetTitle>
     </SheetHeader>
