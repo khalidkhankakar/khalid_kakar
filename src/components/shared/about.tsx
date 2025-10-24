@@ -1,4 +1,3 @@
-'use client';
 import React from 'react'
 import { ProjectCard } from './project-card'
 import { PROJECT_CARDS } from '@/lib/utils'

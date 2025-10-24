@@ -1,9 +1,8 @@
 'use client';
 
 import { useStyleContext } from "@/lib/StyleContext";
-import GoodiesSection from "./goodies-section";
 
-const GoodiesPage = () => {
+const BlogPage = () => {
 
   const { divClassName, divStyle } = useStyleContext()
 
@@ -14,11 +13,11 @@ const GoodiesPage = () => {
         style={divStyle}
       />
 
-       <div className="relative z-10">
-         <GoodiesSection />
+       <div className="relative z-10 py-20 px-10">
+         Fetch the blogs here
        </div>
     </div>
   )
 }
 
-export default GoodiesPage
+export default BlogPage
