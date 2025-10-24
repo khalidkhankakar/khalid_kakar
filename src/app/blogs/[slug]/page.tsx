@@ -1,10 +1,9 @@
-interface Props {
-    params: {
-        slug: string
-    }
-}
+// interface Props {
+//     params: {
+//         slug: string
+//     }
+// }
 
- 
 // export async function generateMetadata(
 //     { params }: Props,
 //     parent: ResolvingMetadata
@@ -21,9 +20,11 @@ interface Props {
 //       },
 //     }
 //   }
-   
-const page = async ({ params }: Props) => {
-    const { slug } = params;
+// { params }: Props
+// const { slug } = params;
+
+
+const page = async () => {
     // TODO: fetch the blog details
     return (
         <div className='min-h-screen overflow-y-auto max-w-[85%] lg:max-w-5xl mx-auto px-4  py-20 text-white'>

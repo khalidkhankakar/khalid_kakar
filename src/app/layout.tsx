@@ -5,7 +5,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/shared/theme-provider";
 
 import localFont from 'next/font/local'
-import { StyleProvider } from "@/lib/StyleContext";
+import { StyleProvider } from "@/components/context/StyleContext";
 import Navbar from "@/components/shared/navbar";
 import { Toaster } from "@/components/ui/sonner";
 import { TRPCReactProvider } from "@/trpc/client";

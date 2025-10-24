@@ -6,7 +6,6 @@ import { Button } from "@/components/ui/button"
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -14,15 +13,10 @@ import {
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { useTransition } from "react"
-import { Loader, X } from "lucide-react"
-import { toast } from "sonner"
-import { useRouter } from "next/navigation"
-import { JSONContent } from "novel"
+import {  X } from "lucide-react"
 import { blogSchema } from "@/modules/blog/schema"
 import ImageUploader from "./image-uploader"
 import Editor from "@/components/editor"
-import { trpc } from "@/trpc/server"
 import { useMutation } from "@tanstack/react-query"
 import { useTRPC } from "@/trpc/client"
 
@@ -31,20 +25,18 @@ interface Props{
   blogId?: string
   blogTitle?: string
   blogContent?: string
-  blogTags?: any[]
+  blogTags?: string[]
   blogImage?: string
   blogDesc?:string
   isEdit?:boolean
 }
 
 const BlogForm = ({
-  blogId,
   blogTitle,
   blogContent,
   blogTags,
   blogImage, 
-  blogDesc,
-  isEdit = false}:Props) => {
+  blogDesc,}:Props) => {
   const trpc = useTRPC()
   const createBlog = useMutation(trpc.blog.createBlog.mutationOptions({
     onSuccess:(message)=>{
@@ -54,8 +46,6 @@ const BlogForm = ({
       console.log('Oops!', {message})
     }
   }))
-  const [isPending, startTransition] = useTransition()
-  const router = useRouter()
   const form = useForm<z.infer<typeof blogSchema>>({
     resolver: zodResolver(blogSchema),
     defaultValues: {
@@ -115,6 +105,7 @@ const BlogForm = ({
     formData.append('content', values.content);
     formData.append('description', values.description);
     console.log({values})
+    // TODO: UPLOAD THE FROMDATA IN REQUEST
     createBlog.mutate(values)
   }
 
@@ -202,7 +193,7 @@ const BlogForm = ({
             </FormItem>
           )}
         />
-        <Button type="submit" className="w-full" >{isPending ? <Loader className="animate-spin" /> : "Create Blog"}</Button>
+        <Button type="submit" className="w-full" >Post Your Blog</Button>
       </form>
     </Form>
   )

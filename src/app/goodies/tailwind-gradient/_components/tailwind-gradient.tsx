@@ -14,7 +14,7 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 import { toast } from 'sonner';
-import { useStyleContext } from '@/lib/StyleContext';
+import { useStyleContext } from '@/components/context/StyleContext';
 
 const directions = [
   { value: 'to-r', label: 'To Right', class: 'bg-gradient-to-r' },
@@ -159,7 +159,7 @@ export default function TailwindGradient() {
           transition={{ duration: 0.5 }}
           className="text-center mb-8"
         >
-          <h1 className="text-4xl z-50 md:text-5xl font-bold bg-gradient-to-r from-slate-900 to-slate-700 dark:from-slate-100 dark:to-slate-300 bg-clip-text text-transparent mb-3">
+          <h1 className="text-4xl z-50 md:text-5xl font-bold bg-linear-to-r from-slate-900 to-slate-700 dark:from-slate-100 dark:to-slate-300 bg-clip-text text-transparent mb-3">
             Tailwind Gradient Generator
           </h1>
           <p className="text-slate-600 dark:text-slate-400 text-lg">

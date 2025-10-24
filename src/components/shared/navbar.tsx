@@ -1,8 +1,4 @@
-'use client'
 import Link from 'next/link';
-import React from 'react'
-import Image from 'next/image';
-import { useStyleContext } from '@/lib/StyleContext';
 import BackgroundDropdown from './background-dropdown';
 import MobileNav from './mobile-nav';
 import NamePlate from './name-plate';
@@ -22,9 +18,6 @@ export const navItems = [
 ]
 
 const Navbar = () => {
-    const { setStyle } = useStyleContext();
-
-
     return (
         <div
             className="fixed w-full top-0 text-black dark:text-white  z-50  border-b-[1px] transition-all duration-700  bg-white-900 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-0 "
@@ -50,13 +43,6 @@ const Navbar = () => {
                             ))}
                         </div>
 
-                        {/* <Button onClick={() => setStyle({
-                            divClassName: "min-h-screen w-full relative", divStyle: {
-                                background: "radial-gradient(125% 125% at 50% 100%, #000000 40%, #350136 100%)",
-                            }
-                        })} >
-                            <Menu className='h-10  w-10' />
-                        </Button> */}
                         <div className='mx-3'>
                             <BackgroundDropdown />
                         </div>

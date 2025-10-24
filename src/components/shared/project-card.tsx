@@ -47,7 +47,7 @@ const project_techs:{
   }
 ]
 
-export const ProjectCard = ({ logo, image, name, description, techs, }: ProjectCard) => {
+export const ProjectCard = ({  name, description}: ProjectCard) => {
 
 
   return (
@@ -72,8 +72,10 @@ export const ProjectCard = ({ logo, image, name, description, techs, }: ProjectC
         {/* Image Section - Mobile */}
         <div className="h-[60%]  p-2">
           <div className="h-full w-full rounded-3xl overflow-hidden ">
-            <img
-              src={'https://i.ytimg.com/vi/ADJKbuayubE/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLB--rnqKyn_r04mv5uDNIjbKw65pg'}
+            <Image
+              src={'/background.jpg'}
+              width={700}
+              height={500}
               alt="Dashboard interface preview"
               className="w-full rounded-2xl h-full  object-cover transition-transform duration-300 hover:scale-105"
             />
@@ -114,8 +116,10 @@ export const ProjectCard = ({ logo, image, name, description, techs, }: ProjectC
         <div className="w-[70%] p-2 ">
           <div className="h-full w-full rounded-3xl overflow-hidden ">
 
-            <img
-              src={"https://i.ytimg.com/vi/ADJKbuayubE/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLB--rnqKyn_r04mv5uDNIjbKw65pg"}
+             <Image
+              src={'/background.jpg'}
+              width={700}
+              height={500}
               alt="Dashboard interface preview"
               className="w-full h-full rounded-3xl object-cover transition-transform duration-300 hover:scale-105"
             />

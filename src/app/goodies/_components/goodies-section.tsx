@@ -9,7 +9,7 @@ const GoodiesSection = () => {
 
             <div>
                 <h1 className="text-3xl md:text-4xl font-medium my-3">Goodies & Freebies</h1>
-                <p className="w-full md:w-2/3 text-sm md:text-lg ml-4">Daily UI is a series of design challenges sent out every day. I've gathered some of the designs I've created from these challenges and compiled them into a collection that I plan to keep updated as I complete more. These are smaller design projects that have helped me explore and develop a variety of solutions.</p>
+                <p className="w-full md:w-2/3 text-sm md:text-lg ml-4">Daily UI is a series of design challenges sent out every day. I&apos;ve gathered some of the designs created from these challenges and compiled them into a collection that I plan to keep updated as I complete more. These are smaller design projects that have helped me explore and develop a variety of solutions.</p>
             </div>
 
             <div className='flex flex-col my-9'>

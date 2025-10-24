@@ -32,11 +32,11 @@ export const blogRouter = createTRPCRouter({
             }
             
             // create the tags
-            let tagId = []
+            const tagId = []
 
             for (const tagName of tags) {
 
-            let existingTag = await ctx.db.query.tags.findFirst({ where: (tag, { eq }) => eq(tag.name, tagName) })
+            const existingTag = await ctx.db.query.tags.findFirst({ where: (tag, { eq }) => eq(tag.name, tagName) })
 
             if (!existingTag) {
                 const [newTag] = await ctx.db.insert(tagsTable).values({ name: tagName }).returning()
@@ -172,18 +172,20 @@ export const blogRouter = createTRPCRouter({
                 // delete existing tagBlogs
                 await ctx.db.delete(tagBlogsTable).where(eq(tagBlogsTable.blogId, id))
                 // create or update new tags
-                let tagIdList = []
+                const tagIdList = []
                 for (const tagName of tags) {
 
-                    let existingTag = await ctx.db.query.tags.findFirst({ where: (tag, { eq }) => eq(tag.name, tagName) })
+                    const existingTag = await ctx.db.query.tags.findFirst({ where: (tag, { eq }) => eq(tag.name, tagName) })
                     if (!existingTag) {
-                        existingTag = await ctx.db.insert(tagsTable).values({ name: tagName })
+                        const [newTag] = await ctx.db.insert(tagsTable).values({ name: tagName }).returning()
+                        tagIdList.push(newTag.id)
+
                     }
                     else{
                         // increment the blog count
-                        existingTag = await ctx.db.update(tagsTable).set({ blogs: (existingTag.blogs || 0) + 1 }).where(eq(tagsTable.name, tagName))
+                        await ctx.db.update(tagsTable).set({ blogs: (existingTag.blogs || 0) + 1 }).where(eq(tagsTable.name, tagName))
+                        tagIdList.push(existingTag.id)
                     }
-                    tagIdList.push(existingTag.id)
                 }
                 // link new tags to blog
                 for (const tagId of tagIdList) {

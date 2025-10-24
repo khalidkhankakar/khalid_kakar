@@ -18,9 +18,9 @@ const ImageUploader = ({url, fileOnChange}:Props) => {
       setImage(URL.createObjectURL(file));
       fileOnChange(file);
     }
-  }, []);
+  }, [fileOnChange]);
 
-  const { getRootProps, getInputProps, isDragActive } = useDropzone({
+  const { getRootProps, getInputProps } = useDropzone({
     onDrop,
     accept: { "image/*": [] },
     maxFiles: 1,

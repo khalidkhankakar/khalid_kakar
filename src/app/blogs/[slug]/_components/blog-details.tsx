@@ -1,10 +1,8 @@
 import { ArrowLeft } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
-import React from 'react'
 import { ObjectId } from 'mongoose'
 import { calculateReadingTime, formatDate } from '@/lib/utils'
-import "highlight.js/styles/github-dark.css";
 
 interface Props {
     _id: ObjectId

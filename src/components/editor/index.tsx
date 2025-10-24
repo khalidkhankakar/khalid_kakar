@@ -29,19 +29,9 @@ import { ColorSelector } from '@/components/editor/selectors/color-selector'
 
 import { Separator } from '@/components/ui/separator'
 
-const hljs = require('highlight.js')
+import hljs from 'highlight.js'
 
 const extensions = [...defaultExtensions, slashCommand]
-
-export const defaultEditorContent = {
-  type: 'doc',
-  content: [
-    {
-      type: 'paragraph',
-      content: []
-    }
-  ]
-}
 
 interface EditorProps {
   initialValue?: JSONContent 
@@ -55,15 +45,15 @@ export default function Editor({ initialValue, onChange }: EditorProps) {
   const [openAI, setOpenAI] = useState(false)
 
   //Apply Codeblock Highlighting on the HTML from editor.getHTML()
-  const highlightCodeblocks = (content: string) => {
-    const doc = new DOMParser().parseFromString(content, 'text/html')
-    doc.querySelectorAll('pre code').forEach(el => {
-      // @ts-ignore
-      // https://highlightjs.readthedocs.io/en/latest/api.html?highlight=highlightElement#highlightelement
-      hljs.highlightElement(el)
-    })
-    return new XMLSerializer().serializeToString(doc)
-  }
+  // const highlightCodeblocks = (content: string) => {
+  //   const doc = new DOMParser().parseFromString(content, 'text/html')
+  //   doc.querySelectorAll('pre code').forEach(el => {
+  //     // @ts-ignore
+  //     // https://highlightjs.readthedocs.io/en/latest/api.html?highlight=highlightElement#highlightelement
+  //     hljs.highlightElement(el)
+  //   })
+  //   return new XMLSerializer().serializeToString(doc)
+  // }
 
   return (
     <div className='relative w-full font-poppins '>

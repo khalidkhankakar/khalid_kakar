@@ -1,19 +1,18 @@
+'use client';
 import {
     DropdownMenu,
     DropdownMenuContent,
     DropdownMenuItem,
-    DropdownMenuLabel,
-    DropdownMenuSeparator,
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
-import { useStyleContext } from "@/lib/StyleContext";
+import { useStyleContext } from "@/components/context/StyleContext";
 import { DYNAMIC_BACKGROUNDS } from "@/lib/utils";
-import { Moon, Sun } from "lucide-react";
+import {  Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 
 
 const BackgroundDropdown = () => {
-    const { divStyle, divClassName, setStyle } = useStyleContext()
+    const { setStyle } = useStyleContext()
     const { setTheme } = useTheme()
 
 

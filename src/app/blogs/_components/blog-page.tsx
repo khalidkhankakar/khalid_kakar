@@ -1,6 +1,6 @@
 'use client';
 
-import { useStyleContext } from "@/lib/StyleContext";
+import { useStyleContext } from "@/components/context/StyleContext";
 
 const BlogPage = () => {
 

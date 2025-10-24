@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Copy, RotateCw, Sparkles } from "lucide-react";
+import {  RotateCw, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Slider } from "@/components/ui/slider";
 import { Label } from "@/components/ui/label";
@@ -13,7 +13,7 @@ import { toast } from "sonner";
 import { PreviewCard } from "./preview-card";
 import { PresetCard } from "./present-card";
 import { CodeDisplay } from "./code-display";
-import { useStyleContext } from "@/lib/StyleContext";
+import { useStyleContext } from "@/components/context/StyleContext";
 
 interface GlassConfig {
   blur: number;

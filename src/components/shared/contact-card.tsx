@@ -9,8 +9,6 @@ const ContactCard = () => {
     { icon: "be", label: "Behance" },
   ];
 
-  const navLinks = ["HOME", "ABOUT", "WORK", "CONTACT"];
-
   return (
     <div className="  z-30  flex items-center mb-5 justify-center">
       <div className="w-full max-w-7xl p-3 rounded-3xl font-poppins backdrop-blur-xs">
@@ -28,10 +26,10 @@ const ContactCard = () => {
             {/* Main Heading */}
             <div className="space-y-2">
               <h1 className="text-3xl  md:text-4xl font-bold leading-tight">
-                LET'S CONNECT
+                LET&apos;S CONNECT
               </h1>
               <p className="text-lg md:text-xl text-contact-text-light font-light max-w-2xl">
-                If you're driven by curiosity and love, research-based design arguments
+                If you&apos;re driven by curiosity and love, research-based design arguments
               </p>
             </div>
 
@@ -57,12 +55,12 @@ const ContactCard = () => {
                 <div className="space-y-3">
                   <div className="flex items-center gap-3 ">
                     <Mail className="w-4 h-4" />
-                    <span>j24v6.design@gmail.com</span>
+                    <span>khalidkhankakar2468@gmail.com</span>
                     <ExternalLink className="w-4 h-4 ml-auto" />
                   </div>
                   <div className="flex items-center gap-3">
                     <Phone className="w-4 h-4" />
-                    <span>+91 63799-04730</span>
+                    <span>+92 3708218757</span>
                     <ExternalLink className="w-4 h-4 ml-auto" />
                   </div>
                 </div>
