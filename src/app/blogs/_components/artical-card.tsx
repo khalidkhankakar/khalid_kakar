@@ -1,15 +1,14 @@
 import Image from "next/image";
-import { ObjectId } from "mongoose";
 import Link from "next/link";
 
 interface ArticalCardProps {
-    slug:string
+    slug: string;
     title: string;
-    imageUrl: string;
-    description:string;
-    tags: { _id: ObjectId; name: string }[];
+    image: string;
+    description: string;
+    tags: string[];
 }
-export default function ArticalCard({slug,description, title, imageUrl, tags}: ArticalCardProps) {
+export default function ArticalCard({slug, description, title, image, tags}: ArticalCardProps) {
 
   return (
     <div className="flex flex-col w-[90vw] md:flex-row items-center bg-dark-2/80 border  text-white p-4 md:p-6 rounded-sm shadow-lg  mx-auto">
@@ -17,8 +16,8 @@ export default function ArticalCard({slug,description, title, imageUrl, tags}: A
       <div className="w-full md:w-1/3">
         <div className="relative w-full h-60 rounded-lg overflow-hidden">
           <Image
-            src={imageUrl} // Ensure this path is correct
-            alt="Enums"
+            src={image || '/images/5.jpg'}
+            alt={`${title} blog image`}
             width={700}
             height={700}
             className="object-cover h-full w-full"          />
@@ -33,7 +32,11 @@ export default function ArticalCard({slug,description, title, imageUrl, tags}: A
         </p>
         <div className="flex items-center gap-2 my-3 justify-center md:justify-normal  flex-wrap ">
             {
-                tags.map((tag)=>(<div key={tag.name} >{tag.name}</div>))
+                tags.map((tag) => (
+                  <div key={tag} className="px-2 py-1 bg-dark-1 rounded text-sm">
+                    {tag}
+                  </div>
+                ))
             }
         </div>
         {/* Author */}

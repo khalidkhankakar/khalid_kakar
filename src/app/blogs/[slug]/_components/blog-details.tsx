@@ -1,35 +1,33 @@
 import { ArrowLeft } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { ObjectId } from 'mongoose'
 import { calculateReadingTime, formatDate } from '@/lib/utils'
 
 interface Props {
-    _id: ObjectId
+    id: string
     title: string
     content: string
-    tags: { _id: ObjectId, name: string }[],
-    imageUrl: string,
+    tags: string[]
+    image: string
     createdAt: Date
-
 }
 
-const BlogDetails = ({ title, content, tags, imageUrl, createdAt }: Props) => {
+const BlogDetails = ({ title, content, tags, image, createdAt }: Props) => {
     return (
         <div className='flex items-center flex-col gap-y-3' >
             <div className="w-full">
-                <Image src={imageUrl} width={1000} height={700} alt="cloundinary" className='w-full object-contain p-4 h-44' />
+                <Image src={image ||'/images/5.jpg'} width={1000} height={700} alt={title} className='w-full object-contain p-4 h-44' />
             </div>
             <div className='flex items-center justify-center gap-y-3 flex-col'>
-                <Link className='group my-3 flex items-center text-purple-1 hover:text-purple-2 gap-1 text-sm text-primary opacity-75 transition hover:opacity-100 sm:mb-8 sm:text-base' href={'/blog'}><ArrowLeft /> <span>All Articals</span></Link>
+                <Link className='group my-3 flex items-center text-purple-1 hover:text-purple-2 gap-1 text-sm text-primary opacity-75 transition hover:opacity-100 sm:mb-8 sm:text-base' href={'/blogs'}><ArrowLeft /> <span>All Articals</span></Link>
                 <h1 className='block tracking-wider text-balance text-center font-lobster text-4xl font-bold sm:text-4xl md:text-5xl'>
                     {title}
                 </h1>
                 <div className='w-full md:w-2/3 my-4 space-y-3 mx-auto'>
                     <div className='flex items-center justify-center gap-3 flex-wrap '>
                         {tags.map((tag) => (
-                            <div key={tag.name}>{tag.name} </div>))
-                        }
+                            <div key={tag} className="px-2 py-1 bg-dark-1 rounded text-sm">{tag}</div>
+                        ))}
                     </div>
                     <div className=' flex items-center justify-center gap-3 '>
                         <div className='flex my-3 items-center gap-2'>

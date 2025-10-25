@@ -1,6 +1,5 @@
 'use client'
 import { useStyleContext } from '@/components/context/StyleContext'
-import React from 'react'
 import BlogForm from './blog-form'
 
 const CreateBlog = () => {

@@ -114,8 +114,22 @@ export const blogRouter = createTRPCRouter({
         try {
             const blogs = await ctx.db.query.blogs.findMany({
                 orderBy: (blog, { desc }) => [desc(blog.createdAt)]
-            }); 
-            return {code:200, blogs};
+            });
+
+            // Fetch tags for all blogs
+            const blogsWithTags = await Promise.all(
+                blogs.map(async (blog) => ({
+                    ...blog,
+                    tags: await ctx.db.query.tagBlogs.findMany({
+                        where: (tagBlog, { eq }) => eq(tagBlog.blogId, blog.id),
+                        with: {
+                            tag: true,
+                        },
+                    }).then(tagBlogs => tagBlogs.map(tb => tb.tag.name))
+                }))
+            );
+            
+            return {code:200, blogs: blogsWithTags};
         } catch (error) {
             throw new TRPCError({ code: "INTERNAL_SERVER_ERROR", message: (error as Error).message });
         }
