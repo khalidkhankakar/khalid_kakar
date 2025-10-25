@@ -13,7 +13,7 @@ export async function generateMetadata(
     const { blog } = await caller.blog.getBlogBySlug({slug});
     
     return {
-        title: blog.title,
+        title: `Khalid | ${blog.title}`,
         description: blog.description,
         openGraph: {
             title: blog.title,
