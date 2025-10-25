@@ -7,7 +7,8 @@ const nextConfig = {
                 hostname: '"e9p6lwdva5ykaks3.public.blob.vercel-storage.com"',
             },
         ],
-    }
+    },
+    cacheComponents: true,    
 };
 
 export default nextConfig;

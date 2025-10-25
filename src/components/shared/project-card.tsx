@@ -61,7 +61,7 @@ export const ProjectCard = ({  name, description}: ProjectCard) => {
         stiffness: 50, // Stiffness for the spring effect
         delay: 0.1 // Optional delay before the animation starts
       }}
-      className={`relative -top-1/4 overflow-hidden bg-white/90 dark:bg-black/90  bg-clip-padding  backdrop-blur-xs  shadow-lg transition-all duration-300 rounded-3xl  md:h-96 h-[25rem]   `}>
+      className={`overflow-hidden bg-white/90 dark:bg-black/90  bg-clip-padding  backdrop-blur-xs  shadow-lg transition-all duration-300 rounded-3xl  md:h-96 h-100   `}>
       {/* Mobile Layout (default) */}
       <div className="block  h-full w-full relative md:hidden">
          <Button variant={'secondary'} className="rounded-full absolute bottom-3 right-3" asChild>
