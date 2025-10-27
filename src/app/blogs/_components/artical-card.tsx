@@ -26,7 +26,7 @@ export default function ArticalCard({slug, description, title, image, tags}: Art
 
       {/* Content */}
       <div className="md:ml-6 mt-4 md:mt-0 w-full md:w-2/3 text-center md:text-left">
-       <Link href={`/blog/${slug}`}><h2 className="text-xl font-bold hover:underline">{title}</h2></Link> 
+       <Link href={`/blogs/${slug}`}><h2 className="text-xl font-bold hover:underline">{title}</h2></Link> 
         <p className="text-gray-400 mt-2 text-sm">
           {description}
         </p>
