@@ -30,7 +30,7 @@ export async function generateMetadata(
 const Page = async ({ params }: PageProps) => {
    
     return (
-        <div className='min-h-screen overflow-y-auto max-w-[85%] lg:max-w-5xl mx-auto px-4 py-20 text-white'>
+        <div className='min-h-screen font-poppins overflow-y-auto max-w-[85%] lg:max-w-5xl mx-auto px-4 py-20 text-white'>
             <div className='flex items-center flex-col gap-y-3' >
                 {/* show the image */}
 
@@ -42,7 +42,7 @@ const Page = async ({ params }: PageProps) => {
                     <BlogInSegments slugPromise={params.then((p)=>p.slug)} ShowImageOnly={true} />
                 </Suspense>
             
-                <div className='flex items-center justify-center gap-y-3 flex-col w-full'>
+                <div className='flex items-center justify-center gap-y-3 flex-col w-full '>
                     <Link
                         className='group my-3 flex items-center gap-1 text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 transition sm:mb-8 sm:text-base'
                         href={'/blogs'}

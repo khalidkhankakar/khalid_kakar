@@ -15,7 +15,7 @@ const BlogPage = () => {
     return (
       <div className={divClassName}>
         <div className="absolute top-0 inset-0 -z-10" style={divStyle} />
-        <div className="relative z-10 py-20 px-10">
+        <div className="relative z-10 py-20 ">
           <div className="flex flex-col gap-8">
             {[1, 2, 3].map((index) => (
               <div key={index} className="flex flex-col w-[90vw] md:flex-row items-center bg-dark-2/80 border text-white p-4 md:p-6 rounded-sm shadow-lg mx-auto animate-pulse">
@@ -83,8 +83,8 @@ const BlogPage = () => {
         style={divStyle}
       />
 
-      <div className="relative z-10 py-20 px-10">
-        <div className="flex flex-col gap-8">
+      <div className="relative mx-auto z-10 py-20 ">
+        <div className="flex items-center justify-center  flex-col gap-8">
           {blogsData?.blogs.map((blog) => (
             <ArticalCard
               key={blog.id}

@@ -1,3 +1,4 @@
+import TagCard from "@/components/shared/tag-card";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -11,7 +12,7 @@ interface ArticalCardProps {
 export default function ArticalCard({slug, description, title, image, tags}: ArticalCardProps) {
 
   return (
-    <div className="flex flex-col w-[90vw] md:flex-row items-center bg-dark-2/80 border  text-white p-4 md:p-6 rounded-sm shadow-lg  mx-auto">
+    <div className="flex flex-col w-[90vw]  md:flex-row items-center bg-dark-2/80  bg-white/90 dark:bg-black font-poppins  p-4 md:p-6 rounded-sm shadow-lg  mx-auto">
       {/* Image */}
       <div className="w-full md:w-1/3">
         <div className="relative w-full h-60 rounded-lg overflow-hidden">
@@ -33,9 +34,7 @@ export default function ArticalCard({slug, description, title, image, tags}: Art
         <div className="flex items-center gap-2 my-3 justify-center md:justify-normal  flex-wrap ">
             {
                 tags.map((tag) => (
-                  <div key={tag} className="px-2 py-1 bg-dark-1 rounded text-sm">
-                    {tag}
-                  </div>
+                  <TagCard key={tag} id={tag} name={tag} />
                 ))
             }
         </div>

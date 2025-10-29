@@ -13,12 +13,14 @@ import {
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import {  X } from "lucide-react"
 import { blogSchema } from "@/modules/blog/schema"
 import ImageUploader from "./image-uploader"
 import Editor from "@/components/editor"
 import { useMutation } from "@tanstack/react-query"
 import { useTRPC } from "@/trpc/client"
+import TagCard from "@/components/shared/tag-card"
+import { toast } from "sonner"
+import { useRouter } from "next/navigation"
 
 
 interface Props{
@@ -38,12 +40,16 @@ const BlogForm = ({
   blogImage, 
   blogDesc,}:Props) => {
   const trpc = useTRPC()
-  const createBlog = useMutation(trpc.blog.createBlog.mutationOptions({
+  const router = useRouter()
+  const {mutate, isPending} = useMutation(trpc.blog.createBlog.mutationOptions({
     onSuccess:(message)=>{
       console.log('Blog created successfully',{message})
+      toast.success('Blog created successfully')
+      router.push('/blogs')
     },
     onError:(message)=>{
       console.log('Oops!', {message})
+      toast.error('Failed to create blog')
     }
   }))
   const form = useForm<z.infer<typeof blogSchema>>({
@@ -106,7 +112,7 @@ const BlogForm = ({
     formData.append('description', values.description);
     console.log({values})
     // TODO: UPLOAD THE FROMDATA IN REQUEST
-    createBlog.mutate(values)
+    mutate(values)
   }
 
   return (
@@ -153,10 +159,7 @@ const BlogForm = ({
                       {
                         field.value.length > 0 &&
                         field.value.map((tag, index) => (
-                          <div key={index} >
-                            <span>{tag}</span>
-                            <X onClick={() => handleTagRemove(tag, field)} />
-                          </div>
+                          <TagCard remove key={index} id={tag} name={tag} onRemove={() => handleTagRemove(tag, field)} />
                         ))
                       }
                     </div>
@@ -193,7 +196,7 @@ const BlogForm = ({
             </FormItem>
           )}
         />
-        <Button type="submit" className="w-full" >Post Your Blog</Button>
+        <Button type="submit" className="w-full" > {isPending ? 'Posting...' : 'Post Your Blog'}</Button>
       </form>
     </Form>
   )

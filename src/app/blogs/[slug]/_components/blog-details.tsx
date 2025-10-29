@@ -2,6 +2,7 @@ import Image from 'next/image'
 import { calculateReadingTime, formatDate } from '@/lib/utils'
 import { caller } from '@/trpc/server'
 import { cache } from 'react'
+import TagCard from '@/components/shared/tag-card'
 
 interface Props {
     ShowImageOnly?: boolean
@@ -26,19 +27,14 @@ const BlogInSegments =  async({slugPromise, ShowImageOnly =false, showTitleAndTa
 
     if (showTitleAndTagsAndTime) {
         return (
-            <div>
+            <div className='font-poppins'>
                 <h1 className='block text-center text-gray-900 dark:text-white text-4xl font-bold sm:text-4xl md:text-5xl'>
                     {title}
                 </h1>
                 <div className='w-full md:w-2/3 my-4 space-y-3 mx-auto'>
                     <div className='flex items-center justify-center gap-3 flex-wrap'>
                         {tags.map((tag) => (
-                            <div
-                                key={tag}
-                                className="px-2 py-1 rounded text-sm bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300"
-                            >
-                                {tag}
-                            </div>
+                            <TagCard key={tag} id={tag} name={tag} />
                         ))}
                     </div>
 
@@ -61,9 +57,13 @@ const BlogInSegments =  async({slugPromise, ShowImageOnly =false, showTitleAndTa
 
 
     return (
-        <article className="prose prose-sm sm:prose lg:prose-lg xl:prose-xl dark:prose-invert mx-auto ">
-            <div dangerouslySetInnerHTML={{ __html: content }} />
-        </article>
+        <div className="w-full">
+            <article className="prose font-poppins prose-sm sm:prose lg:prose-lg xl:prose-xl dark:prose-invert mx-auto">
+                <div className="max-w-full overflow-x-hidden prose-pre:overflow-x-auto prose-pre:max-w-full prose-img:max-w-full" 
+                    dangerouslySetInnerHTML={{ __html: content }} 
+                />
+            </article>
+        </div>
     )
 }
 

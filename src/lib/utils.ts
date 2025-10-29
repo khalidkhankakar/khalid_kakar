@@ -1,6 +1,7 @@
 import { clsx, type ClassValue } from "clsx"
 import React from "react";
 import { twMerge } from "tailwind-merge"
+import { techMap } from "./tech-map";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
@@ -128,6 +129,12 @@ export function calculateReadingTime(htmlContent:string) {
   const readingTime = Math.ceil(words / wordsPerMinute);
 
   return `${readingTime} min read`;
-
-  return `${readingTime} min read`;
 }
+
+export const getDeviconClassName = (techName: string) => {
+  const normalizedTechName = techName.replace(/[ .]/g, "").toLowerCase();
+
+  return techMap[normalizedTechName]
+    ? `${techMap[normalizedTechName]} colored`
+    : "devicon-devicon-plain";
+};
