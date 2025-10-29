@@ -13,6 +13,7 @@ const BlogInSegments =  async({slugPromise, ShowImageOnly =false, showTitleAndTa
     const slug = await slugPromise
     const {content, image, createdAt, tags, title} = await getBlogBySlug(slug)
 
+
     if (ShowImageOnly) {
         return (
             <div className="w-full">
@@ -69,7 +70,7 @@ const BlogInSegments =  async({slugPromise, ShowImageOnly =false, showTitleAndTa
 export default BlogInSegments
 
 
-const getBlogBySlug = cache(async (slug:string)=>{
+export const getBlogBySlug = cache(async (slug:string)=>{
     const blog = await caller.blog.getBlogBySlug({slug})
     return blog.blog
 })
