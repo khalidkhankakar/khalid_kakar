@@ -28,6 +28,7 @@ export async function generateMetadata(
 }
 
 const Page = async ({ params }: PageProps) => {
+    'use cache';
    
     return (
         <div className='min-h-screen font-poppins overflow-y-auto max-w-[85%] lg:max-w-5xl mx-auto px-4 py-20 text-white'>
