@@ -1,26 +1,27 @@
 import { Button } from "@/components/ui/button";
-import { Star, Mail, Phone, ExternalLink } from "lucide-react";
+import { Star, Mail, Phone, ExternalLink, MailIcon, Github, Linkedin, Twitch } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 const ContactCard = () => {
   const socialLinks = [
     { icon: "in", label: "LinkedIn" },
-    { icon: "ig", label: "Instagram" }, 
+    { icon: "ig", label: "Instagram" },
     { icon: "dr", label: "Dribbble" },
     { icon: "be", label: "Behance" },
   ];
 
   return (
     <div className="  z-30  flex items-center mb-5 justify-center">
-      <div className="w-full max-w-7xl p-3 rounded-3xl font-poppins backdrop-blur-xs">
+      <div className="w-full  p-4   font-poppins backdrop-blur-xs">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap- items-center">
           {/* Left Content Section */}
           <div className="lg:col-span-8 space-y-3">
             {/* Profile Header */}
             <div className="flex items-center gap-3 mb-6">
-              
+
               <h3 className=" font-semibold text-lg">
-                  Khalid khan - Product Designer and Framer Developer
-                </h3>
+                Khalid khan - Full Stack Developer
+              </h3>
             </div>
 
             {/* Main Heading */}
@@ -35,18 +36,20 @@ const ContactCard = () => {
 
             {/* CTA Button */}
             <div className="flex md:flex-row flex-col gap-2">
-              <Button variant="default" size="lg" className="rounded-xl text-lg px-4 py-2 ">
-                <Star className="w-5 h-5 fill-current" />
-                Mail me
+              <Button variant="default" >
+                <Image src={'/icons/gmail.svg'} width={50} height={50} alt="whatsapp" className="w-6 h-6" />
+
+                <span> Mail me</span>
               </Button>
-               <Button variant="default" size="lg" className="rounded-xl text-lg px-4 py-2 ">
-                <Star className="w-5 h-5 fill-current" />
-                Whatsapp me
+              <Button variant="default" >
+                <Image src={'/icons/whatsapp.svg'} width={50} height={50} alt="whatsapp" className="w-6 h-6" />
+
+                <span> Whatsapp me</span>
               </Button>
             </div>
 
             {/* Bottom Section */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-8">
+            <div className="w-full flex flex-col md:flex-row md:w-1/2 gap-8 py-4">
               {/* Contact Info */}
               <div className="space-y-4 text-sm">
                 <h4 className=" font-semibold ">
@@ -54,7 +57,7 @@ const ContactCard = () => {
                 </h4>
                 <div className="space-y-3">
                   <div className="flex items-center gap-3 ">
-                    <Mail className="w-4 h-4" />
+                    <MailIcon className="w-4 h-4" />
                     <span>khalidkhankakar2468@gmail.com</span>
                     <ExternalLink className="w-4 h-4 ml-auto" />
                   </div>
@@ -66,21 +69,33 @@ const ContactCard = () => {
                 </div>
               </div>
 
-   
-              {/* Social Media */}
-              <div className="space-y-4">
-                <h4 className="text-contact-text-primary font-semibold text-lg">
-                  Social Handles
+              <div className="space-y-4 text-sm">
+                <h4 className=" font-semibold ">
+                  Social Links
                 </h4>
-                <div className="flex gap-3">
-                  {socialLinks.map((social) => (
-                    <div
-                      key={social.label}
-                      className="w-10 h-10 bg-contact-social-bg rounded-lg flex items-center justify-center text-contact-text-primary text-sm font-bold cursor-pointer hover:bg-contact-button-bg hover:text-contact-button-text transition-all duration-200"
-                    >
-                      {social.icon}
+                <div className="flex flex-col gap-2">
+                  <Link href={'https://github.com/khalidkhankakar'} target="_blank" className="hover:underline">
+                    <div className="flex  items-center gap-3 ">
+                      <Image src={'/icons/github.svg'} width={20} height={20} alt="github" />
+                      <span>GitHub</span>
+                      <ExternalLink className="w-4 h-4 " />
                     </div>
-                  ))}
+                  </Link>
+                  <Link href={'https://www.linkedin.com/in/khalid-khan-kakar1/'} target="_blank" className="hover:underline ">
+                    <div className="flex   items-center gap-3 ">
+                      <Image src={'/icons/linkedin.svg'} width={20} height={20} alt="linkedin" />
+
+                      <span>LinkedIn</span>
+                      <ExternalLink className="w-4 h-4 " />
+                    </div>
+                  </Link>
+                  <Link href={'https://x.com/KhalidK37931474'} target="_blank" className="hover:underline ">
+                    <div className="flex   items-center gap-3 ">
+                      <Image src={'/icons/x.svg'} width={20} height={20} alt="linkedin" />
+                      <span>X</span>
+                      <ExternalLink className="w-4 h-4 " />
+                    </div>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -89,14 +104,14 @@ const ContactCard = () => {
           {/* Right Illustration Section */}
           <div className="lg:col-span-4 flex justify-center">
             <div className="relative">
-                             <Image 
-                  src={'/profile.jfif'} 
-                  alt="profile" 
-                  width={150}
-                  height={150}
-                  className="w-full grayscale-100 hover:grayscale-0 transition-all h-full object-contain rounded-xl"
-                /> 
-  
+              <Image
+                src={'/profile.jfif'}
+                alt="profile"
+                width={150}
+                height={150}
+                className="w-full grayscale-100 hover:grayscale-0 transition-all h-full object-contain rounded-xl"
+              />
+
             </div>
           </div>
         </div>

@@ -28,7 +28,7 @@ const BlogInSegments =  async({slugPromise, ShowImageOnly =false, showTitleAndTa
     if (showTitleAndTagsAndTime) {
         return (
             <div className='font-poppins'>
-                <h1 className='block text-center text-gray-900 dark:text-white text-4xl font-bold sm:text-4xl md:text-5xl'>
+                <h1 className='block text-center text-gray-900 dark:text-white text-2xl font-bold sm:text-4xl md:text-5xl'>
                     {title}
                 </h1>
                 <div className='w-full md:w-2/3 my-4 space-y-3 mx-auto'>
